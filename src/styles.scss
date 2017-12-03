@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/normalize.css/normalize.css';
+
+body{
+    min-height: 100%;
+    margin: 50px 0;
+}
+.app-header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 50px;
+    line-height: 50px;
+    background: linear-gradient(to right, #347eff, #1ea3ff);
+    border-radius: 0;
+    border: 0;
+    z-index: 10;
+    color:#fff;
+    text-align:center;
+  
+}
+.app-header:before{
+    content: " ";
+    display: table;
+}
+
+.app-body{
+    min-height: 100%;
+    background-color:#fff;
+}
+
+.app-footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-height: 50px;
+    line-height: 50px;
+    border-radius: 0;
+    border: 0;
+    z-index: 10;
+    color: #fff;
+    text-align: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    border-top: .55px solid rgba(0, 0, 0, .3);
+    background: #f8f8f8;
+}
+.tabbar{
+    display: flex;
+}
+.tabbar .tabbar-item{
+    flex:1;
+    text-overflow: ellipsis;
+}
+
+.tabbar .tabbar-item a {
+    text-decoration: none;
+    display:block;
+    color:#999;
+}
+.tabbar .tabbar-item.active a{
+    color: #488aff;
+}
