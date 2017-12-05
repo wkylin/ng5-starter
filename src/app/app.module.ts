@@ -8,7 +8,7 @@ import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { SignModule } from './modules/sign/sign.module';
-import { HomeModule } from './modules/home/home.module';
+// import { HomeModule } from './modules/home/home.module';
 // import { ProductModule } from './modules/product/product.module';
 // import { FindModule } from './modules/find/find.module';
 // import { MyModule } from './modules/my/my.module';
@@ -22,7 +22,7 @@ import { HomeModule } from './modules/home/home.module';
     imports: [
         BrowserModule,
         SignModule,
-        HomeModule,
+        // HomeModule,
         // ProductModule,
         // FindModule,
         // MyModule,

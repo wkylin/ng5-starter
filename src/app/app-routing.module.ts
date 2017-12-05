@@ -9,9 +9,14 @@ import { HomeComponent } from './modules/home/home.component';
 // import { MyComponent } from './modules/my/my.component';
 
 const routes: Routes = [
+    {path: '', redirectTo: 'home', pathMatch: 'full', data: {title: 'Home', isShowTabbar: true}},
     {path: 'about', component: AboutComponent, data: {title: 'About', isShowTabbar: true}},
     {path: 'sign', component: SignComponent, data: {title: 'Sign', isShowTabbar: true}},
-    {path: 'home', component: HomeComponent, data: {title: 'Home', isShowTabbar: true}},
+    // {path: 'home', component: HomeComponent, data: {title: 'Home', isShowTabbar: true}},
+    {
+        path: 'home', data: {title: 'Home', isShowTabbar: true},
+        loadChildren: './modules/home/home.module#HomeModule'
+    },
     // {path: 'product', component: ProductComponent, data: {title: 'Product', isShowTabbar: true}},
     {
         path: 'product', data: {title: 'Product', isShowTabbar: true},
@@ -26,7 +31,7 @@ const routes: Routes = [
         path: 'my', data: {title: 'My', isShowTabbar: true},
         loadChildren: './modules/my/my.module#MyModule'
     },
-    {path: '', redirectTo: 'home', pathMatch: 'full', data: {title: 'Home', isShowTabbar: true}},
+
     {path: '**', component: NotFoundComponent, data: {title: 'Not Found', isShowTabbar: true}}
 ];
 

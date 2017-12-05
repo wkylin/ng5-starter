@@ -5,7 +5,7 @@ import { HomeComponent } from './home.component';
 
 const routes: Routes = [
     {
-        path: 'home', component: HomeComponent, data: {title: 'MyHome', isShowTabbar: true}
+        path: '', component: HomeComponent, data: {title: 'MyHome', isShowTabbar: true}
     }
 ];
 
