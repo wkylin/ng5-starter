@@ -5,9 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { SignModule } from './modules/sign/sign.module';
+import { SharedModule } from './modules/shared/shared.module';
+
+// import { NotFoundComponent } from './components/not-found/not-found.component';
 // import { HomeModule } from './modules/home/home.module';
 // import { ProductModule } from './modules/product/product.module';
 // import { FindModule } from './modules/find/find.module';
@@ -16,12 +18,12 @@ import { SignModule } from './modules/sign/sign.module';
 @NgModule({
     declarations: [
         AppComponent,
-        AboutComponent,
-        NotFoundComponent
+        AboutComponent
     ],
     imports: [
         BrowserModule,
         SignModule,
+        SharedModule,
         // HomeModule,
         // ProductModule,
         // FindModule,

@@ -10,9 +10,11 @@ const routes: Routes = [
         path: '', component: MyComponent, data: {title: 'My', isShowTabbar: true},
         children: [
             {path: '', redirectTo: 'index', pathMatch: 'full'},
-            {path: 'index', component: IndexComponent, data: {title: 'MyHome', isShowTabbar: true}},
+            {
+                path: 'index', component: IndexComponent, data: {title: 'MyHome', isShowTabbar: true}
+            },
             {path: 'setting', component: SettingComponent, data: {title: 'Setting'}},
-            {path: '**', component: IndexComponent, data: {title: 'MyHome'}}
+            {path: '**', component: NotFoundComponent, data: {title: 'Not Fund'}}
         ]
     }
 ];
