@@ -3,7 +3,9 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SignComponent } from './modules/sign/sign.component';
-import { HomeComponent } from './modules/home/home.component';
+import { AppCustomPreloading } from './common/my-preloading-strategy';
+// import { HomeComponent } from './modules/home/home.component';
+
 // import { ProductComponent } from './modules/product/product.component';
 // import { FindComponent } from './modules/find/find.component';
 // import { MyComponent } from './modules/my/my.component';
@@ -14,21 +16,21 @@ const routes: Routes = [
     {path: 'sign', component: SignComponent, data: {title: 'Sign', isShowTabbar: true}},
     // {path: 'home', component: HomeComponent, data: {title: 'Home', isShowTabbar: true}},
     {
-        path: 'home', data: {title: 'Home', isShowTabbar: true},
+        path: 'home', data: {title: 'Home', isShowTabbar: true, preload: true},
         loadChildren: './modules/home/home.module#HomeModule'
     },
     // {path: 'product', component: ProductComponent, data: {title: 'Product', isShowTabbar: true}},
     {
-        path: 'product', data: {title: 'Product', isShowTabbar: true},
+        path: 'product', data: {title: 'Product', isShowTabbar: true, preload: false},
         loadChildren: './modules/product/product.module#ProductModule'
     },
     // {path: 'find', component: FindComponent, data: {title: 'Find', isShowTabbar: true}},
     {
-        path: 'find', data: {title: 'Find', isShowTabbar: true},
+        path: 'find', data: {title: 'Find', isShowTabbar: true, preload: false},
         loadChildren: './modules/find/find.module#FindModule'
     },
     {
-        path: 'my', data: {title: 'My', isShowTabbar: true},
+        path: 'my', data: {title: 'My', isShowTabbar: true, preload: false},
         loadChildren: './modules/my/my.module#MyModule'
     },
 
@@ -36,7 +38,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, {enableTracing: true, preloadingStrategy: PreloadAllModules})],
+    // imports: [RouterModule.forRoot(routes, {enableTracing: true, preloadingStrategy: PreloadAllModules})],
+    imports: [RouterModule.forRoot(routes, {enableTracing: true, preloadingStrategy: AppCustomPreloading})],
     exports: [RouterModule]
 })
 export class AppRoutingModule {

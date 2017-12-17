@@ -8,6 +8,7 @@ import { AboutComponent } from './components/about/about.component';
 
 import { SignModule } from './modules/sign/sign.module';
 import { SharedModule } from './modules/shared/shared.module';
+import { AppCustomPreloading } from './common/my-preloading-strategy';
 
 // import { NotFoundComponent } from './components/not-found/not-found.component';
 // import { HomeModule } from './modules/home/home.module';
@@ -30,7 +31,7 @@ import { SharedModule } from './modules/shared/shared.module';
         // MyModule,
         AppRoutingModule
     ],
-    providers: [],
+    providers: [AppCustomPreloading],
     bootstrap: [AppComponent]
 })
 export class AppModule {
