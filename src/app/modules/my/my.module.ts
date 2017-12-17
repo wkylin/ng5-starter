@@ -16,7 +16,8 @@ import { SharedModule } from '../../modules/shared/shared.module';
         MyComponent,
         SettingComponent,
         IndexComponent
-    ]
+    ],
+    providers: []
 })
 export class MyModule {
 }

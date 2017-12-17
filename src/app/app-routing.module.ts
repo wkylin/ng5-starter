@@ -4,6 +4,7 @@ import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SignComponent } from './modules/sign/sign.component';
 import { AppCustomPreloading } from './common/my-preloading-strategy';
+import { AuthGuard } from './guards/auth.guard';
 // import { HomeComponent } from './modules/home/home.component';
 
 // import { ProductComponent } from './modules/product/product.component';
@@ -31,7 +32,9 @@ const routes: Routes = [
     },
     {
         path: 'my', data: {title: 'My', isShowTabbar: true, preload: false},
-        loadChildren: './modules/my/my.module#MyModule'
+        loadChildren: './modules/my/my.module#MyModule',
+        canLoad: [AuthGuard],
+        canActivate: [AuthGuard],
     },
 
     {path: '**', component: NotFoundComponent, data: {title: 'Not Found', isShowTabbar: true}}

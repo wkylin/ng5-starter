@@ -9,6 +9,8 @@ import { AboutComponent } from './components/about/about.component';
 import { SignModule } from './modules/sign/sign.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { AppCustomPreloading } from './common/my-preloading-strategy';
+import { AuthGuard } from './guards/auth.guard';
+import { AuthService } from './services/auth.service';
 
 // import { NotFoundComponent } from './components/not-found/not-found.component';
 // import { HomeModule } from './modules/home/home.module';
@@ -31,7 +33,7 @@ import { AppCustomPreloading } from './common/my-preloading-strategy';
         // MyModule,
         AppRoutingModule
     ],
-    providers: [AppCustomPreloading],
+    providers: [AppCustomPreloading, AuthService, AuthGuard],
     bootstrap: [AppComponent]
 })
 export class AppModule {
