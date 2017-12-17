@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { CanLoad, CanActivate, CanActivateChild } from '@angular/router';
+import { CanLoad, CanActivate, CanActivateChild, CanDeactivate } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { SettingComponent } from '../modules/my/setting/setting.component';
 
 @Injectable()
-export class AuthGuard implements CanLoad, CanActivate, CanActivateChild {
+export class AuthGuard implements CanLoad, CanActivate, CanActivateChild, CanDeactivate<SettingComponent> {
 
     constructor(private authService: AuthService) {
     }
@@ -27,6 +28,13 @@ export class AuthGuard implements CanLoad, CanActivate, CanActivateChild {
      * 验证子路由是否可以激活
      */
     canActivateChild() {
+        return true;
+    }
+
+    canDeactivate(target: SettingComponent) {
+        if (target.hasChanges()) {
+            return window.confirm('Do you really want to cancel?');
+        }
         return true;
     }
 }

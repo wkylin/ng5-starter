@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-setting',
-  templateUrl: './setting.component.html',
-  styleUrls: ['./setting.component.scss']
+    selector: 'app-setting',
+    templateUrl: './setting.component.html',
+    styleUrls: ['./setting.component.scss']
 })
 export class SettingComponent implements OnInit {
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
+
+    hasChanges() {
+        return true;
+    }
 
 }
