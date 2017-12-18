@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { GithubAuthInterceptor } from './services/githubauth.interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -35,7 +37,16 @@ import { AuthService } from './services/auth.service';
         // MyModule,
         AppRoutingModule
     ],
-    providers: [AppCustomPreloading, AuthService, AuthGuard],
+    providers: [
+        AppCustomPreloading,
+        AuthService,
+        AuthGuard,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: GithubAuthInterceptor,
+            multi: true
+        }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
