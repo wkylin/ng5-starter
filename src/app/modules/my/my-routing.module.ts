@@ -19,7 +19,7 @@ const routes: Routes = [
                 path: 'setting', component: SettingComponent, data: {title: 'Setting'},
                 canDeactivate: [ AuthGuard ]
             },
-            {path: '**', component: NotFoundComponent, data: {title: 'Not Fund'}}
+            {path: '**', component: NotFoundComponent, data: {title: 'Not Found'}}
         ]
     }
 ];
