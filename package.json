@@ -1,11 +1,11 @@
 {
-  "name": "ng-gocfae",
+  "name": "ng-start",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --open",
+    "build": "ng build -prod --stats-json -aot -ec --extract-licenses false ",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -45,6 +45,6 @@
     "protractor": "^5.2.0",
     "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
-    "typescript": "^2.6.2"
+    "typescript": "^2.4.2"
   }
 }
