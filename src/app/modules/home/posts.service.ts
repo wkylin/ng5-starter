@@ -2,12 +2,12 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable()
-export class PersonService {
+export class PostsService {
 
   constructor(private http: HttpClient) {
   }
 
-  queryPersonList() {
-    return this.http.get('posts');
+  queryPostsList() {
+    return this.http.get('api/posts');
   }
 }

@@ -1,26 +1,46 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { PersonService } from './person.service';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {PostsService} from './posts.service';
+import itemAnimations from './item.animations';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
+  animations: itemAnimations
 })
 export class HomeComponent implements OnInit {
 
-    persons: any;
+  posts: any = [];
+  state = 'small';
+  constructor(private http: HttpClient, private postsService: PostsService) {
+  }
 
-    constructor(private http: HttpClient, private personService: PersonService) {
-    }
+  ngOnInit() {
+    this.postsService.queryPostsList().subscribe(
+      (data) => {
+        this.posts = data;
+      },
+      (err) => {
+        console.log(err.message);
+      });
+  }
 
-    ngOnInit() {
-        this.personService.queryPersonList().subscribe(
-            (data) => {
-                this.persons = data;
-            },
-            (err) => {
-                console.log(err.message);
-            });
-    }
+  pushItem() {
+    this.posts.push({
+      'id': 1,
+      'title': 'Hey this is an item',
+      'author': 'wkylin'
+    });
+
+    this.state = (this.state === 'small' ? 'large' : 'small');
+  }
+
+  removeItem() {
+    this.posts.pop();
+  }
+
+  animateMe() {
+
+  }
 }

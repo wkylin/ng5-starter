@@ -1,21 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { HomeComponent } from './home.component';
-import { HomeRoutingModule } from './home-routing.module';
+import {HomeComponent} from './home.component';
+import {HomeRoutingModule} from './home-routing.module';
 
 // import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryPersonDbService } from '../../services/my-data/my-data';
-import { PersonService } from './person.service';
+import {PostsService} from './posts.service';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        // InMemoryWebApiModule.forFeature(InMemoryPersonDbService),
-        HomeRoutingModule
-    ],
-    declarations: [HomeComponent],
-    providers: [PersonService]
+  imports: [
+    CommonModule,
+    // InMemoryWebApiModule.forFeature(InMemoryPersonDbService),
+    HomeRoutingModule
+  ],
+  declarations: [HomeComponent],
+  providers: [PostsService]
 })
 export class HomeModule {
 }

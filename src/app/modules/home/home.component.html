@@ -1,8 +1,11 @@
 <p>
-  home works!
+  Welcome to Angular4 Animations!!
 </p>
-<ul class="heroes">
-  <li *ngFor="let person of persons">
-      <span class="badge">{{ person.id }}</span> {{ person.name }}
+
+<button (click)="pushItem()" [@myAnimation]="state">Add item</button>
+<button (click)="removeItem()">Remove item</button>
+<ul class="ui-list" [@listAnimation]="posts.length">
+  <li class="ui-list-item" *ngFor="let post of posts">
+    {{ post.title }}
   </li>
 </ul>

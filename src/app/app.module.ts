@@ -1,19 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {GithubAuthInterceptor} from './services/githubauth.interceptor';
 
-import { GithubAuthInterceptor } from './services/githubauth.interceptor';
+import {AppRoutingModule} from './app-routing.module';
 
-import { AppRoutingModule } from './app-routing.module';
+import {AppComponent} from './app.component';
+import {AboutComponent} from './components/about/about.component';
 
-import { AppComponent } from './app.component';
-import { AboutComponent } from './components/about/about.component';
-
-import { SignModule } from './modules/sign/sign.module';
-import { SharedModule } from './modules/shared/shared.module';
-import { AppCustomPreloading } from './common/my-preloading-strategy';
-import { AuthGuard } from './guards/auth.guard';
-import { AuthService } from './services/auth.service';
+import {SignModule} from './modules/sign/sign.module';
+import {SharedModule} from './modules/shared/shared.module';
+import {AppCustomPreloading} from './common/my-preloading-strategy';
+import {AuthGuard} from './guards/auth.guard';
+import {AuthService} from './services/auth.service';
 
 // import { NotFoundComponent } from './components/not-found/not-found.component';
 // import { HomeModule } from './modules/home/home.module';
@@ -22,34 +22,34 @@ import { AuthService } from './services/auth.service';
 // import { MyModule } from './modules/my/my.module';
 
 
-
 @NgModule({
-    declarations: [
-        AppComponent,
-        AboutComponent
-    ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        SignModule,
-        SharedModule,
-        // HomeModule,
-        // ProductModule,
-        // FindModule,
-        // MyModule,
-        AppRoutingModule
-    ],
-    providers: [
-        AppCustomPreloading,
-        AuthService,
-        AuthGuard,
-        {
-            provide: HTTP_INTERCEPTORS,
-            useClass: GithubAuthInterceptor,
-            multi: true
-        }
-    ],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    AboutComponent
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    SignModule,
+    SharedModule,
+    // HomeModule,
+    // ProductModule,
+    // FindModule,
+    // MyModule,
+    AppRoutingModule
+  ],
+  providers: [
+    AppCustomPreloading,
+    AuthService,
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: GithubAuthInterceptor,
+      multi: true
+    }
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
