@@ -11,8 +11,9 @@ li {
 }
 html,
 body {
-  width: 100%;
   height: 100%;
+  overflow-x:hidden;
+  width: 100vw;
 }
 .app-layout{
   width:100%;
@@ -20,12 +21,14 @@ body {
   overflow:hidden;
 }
 .app-body {
-  height: 100%;
-  margin:50px 0;
-  width:100%;
-  overflow:hidden;
+  overflow:auto;
+  //height: 100%;
+  width: 100%;
   position:absolute;
-  background-color: #eee;
+  top:50px;
+  left:0;
+  right:0;
+  bottom:50px;
 }
 
 .app-header {
