@@ -1,18 +1,19 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {PostsService} from './posts.service';
-import itemAnimations from './item.animations';
+import {ItemAnimations} from './item.animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  animations: itemAnimations
+  animations: ItemAnimations
 })
 export class HomeComponent implements OnInit {
 
   posts: any = [];
   state = 'small';
+
   constructor(private http: HttpClient, private postsService: PostsService) {
   }
 
@@ -22,8 +23,9 @@ export class HomeComponent implements OnInit {
         this.posts = data;
       },
       (err) => {
-        console.log(err.message);
-      });
+        console.log(err);
+      }
+    );
   }
 
   pushItem() {
@@ -40,7 +42,4 @@ export class HomeComponent implements OnInit {
     this.posts.pop();
   }
 
-  animateMe() {
-
-  }
 }

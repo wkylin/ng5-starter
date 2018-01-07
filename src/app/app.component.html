@@ -1,25 +1,26 @@
 <div class="app-layout">
-    <div class="app-header">
-        Header
+  <div class="app-header">
+    Hello,{{ angular }}
+  </div>
+  <div class="app-body">
+    <div [@routeAnimation]="routerStateCode">
+      <router-outlet></router-outlet>
     </div>
-    <div class="app-body">
-        <h2>Hello,{{ angular }}</h2>
-        <router-outlet></router-outlet>
+  </div>
+  <div class="app-footer" *ngIf="isShowTabbar">
+    <div class="tabbar">
+      <div class="tabbar-item" [routerLinkActive]="['active']">
+        <a [routerLink]="['home']">Home</a>
+      </div>
+      <div class="tabbar-item" routerLinkActive="active">
+        <a routerLink="product">Product</a>
+      </div>
+      <div class="tabbar-item" [routerLinkActive]="['active']">
+        <a routerLink="find">Find</a>
+      </div>
+      <div class="tabbar-item" [routerLinkActive]="['active']">
+        <a routerLink="my">My</a>
+      </div>
     </div>
-    <div class="app-footer" *ngIf="isShowTabbar">
-        <div class="tabbar">
-            <div class="tabbar-item" [routerLinkActive]="['active']">
-                <a [routerLink]="['home']">Home</a>
-            </div>
-            <div class="tabbar-item" routerLinkActive="active">
-                <a routerLink="product">Product</a>
-            </div>
-            <div class="tabbar-item" [routerLinkActive]="['active']">
-                <a routerLink="find">Find</a>
-            </div>
-            <div class="tabbar-item" [routerLinkActive]="['active']">
-                <a routerLink="my">My</a>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
