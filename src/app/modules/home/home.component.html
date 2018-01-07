@@ -1,3 +1,8 @@
 <p>
   home works!
 </p>
+<ul class="heroes">
+  <li *ngFor="let person of persons">
+      <span class="badge">{{ person.id }}</span> {{ person.name }}
+  </li>
+</ul>
