@@ -14,6 +14,7 @@ import {SharedModule} from './modules/shared/shared.module';
 import {AppCustomPreloading} from './common/my-preloading-strategy';
 import {AuthGuard} from './guards/auth.guard';
 import {AuthService} from './services/auth.service';
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 // import { NotFoundComponent } from './components/not-found/not-found.component';
 // import { HomeModule } from './modules/home/home.module';
@@ -47,6 +48,10 @@ import {AuthService} from './services/auth.service';
       provide: HTTP_INTERCEPTORS,
       useClass: GithubAuthInterceptor,
       multi: true
+    },
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
     }
   ],
   bootstrap: [AppComponent]
