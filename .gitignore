@@ -3,10 +3,7 @@
 # compiled output
 /tmp
 /out-tsc
-
-# dependencies
-
 # IDEs and editors
 .idea/
-dist/
+#dist/
 node_modules/
