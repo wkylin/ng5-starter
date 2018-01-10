@@ -6,7 +6,7 @@
     "ng": "ng",
     "mock": "json-server --watch src/app/mock/db.json",
     "start": "ng serve --port=4201 --open",
-    "start-proxy": "ng serve --host 0.0.0.0 --open --proxy-config proxy.conf.json",
+    "start-proxy": "ng serve --open --proxy-config proxy.conf.json",
     "start-proxy-multi": "ng serve --open --proxy-config proxy.conf.js",
     "mock-server": "concurrently \"yarn run mock\" \"yarn run start-proxy\"",
     "build-dev": "ng build --dev -sm true",

@@ -42,4 +42,32 @@ export class HomeComponent implements OnInit {
     this.posts.pop();
   }
 
+  formatFixed(number) {
+    let numF = number.toString();
+    if (numF.indexOf('.') !== -1) {
+      numF = numF.substring(0, numF.indexOf('.') + 3);
+      const temArray = numF.split('.');
+      const temLast = temArray[1];
+      let tem = '';
+      if (temLast.indexOf('.') !== -1) {
+        tem = temLast.substring(0, temLast.indexOf('.'));
+      } else {
+        tem = temLast;
+      }
+      numF = temArray[0] + '.' + tem;
+    }
+    numF = parseFloat(numF).toFixed(3);
+    /*if (numF === 'NaN') {
+      return '0.00';
+    }*/
+    /*if (numF.indexOf('.') === -1) {
+      numF = numF + '.00';
+    } else if (numF.substr(-2, 1) === '.') {
+      numF = numF + '0';
+    }*/
+    numF = numF.substring(0, numF.length - 1);
+    numF = numF.replace(/(\d{1,3})(?=(\d{3})+(?:$|\D))/g, '$1,');
+    // return numF;
+    console.log(numF);
+  }
 }

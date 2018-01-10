@@ -1,7 +1,10 @@
 <div>
   Welcome to Angular4 Animations!!
 </div>
-
+<form>
+  <input type="text" name="number" [(ngModule)]="name" />
+</form>
+<button (click)="formatFixed('22222.289..')">格式化</button>
 <button (click)="pushItem()" [@myAnimation]="state">Add item</button>
 <button (click)="removeItem()">Remove item</button>
 <ul class="ui-list" [@listAnimation]="posts.length">
