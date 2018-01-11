@@ -1,20 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
+import {SlideInOutAnimation} from '../../../router-animations';
 
 @Component({
-    selector: 'app-setting',
-    templateUrl: './setting.component.html',
-    styleUrls: ['./setting.component.scss']
+  selector: 'app-setting',
+  templateUrl: './setting.component.html',
+  styleUrls: ['./setting.component.scss'],
+  animations: [SlideInOutAnimation]
 })
 export class SettingComponent implements OnInit {
 
-    constructor() {
-    }
+  @HostBinding('@slideInOutAnimation') routeAnimation = true;
+  @HostBinding('style.display') display = 'block';
 
-    ngOnInit() {
-    }
+  constructor() {
+  }
 
-    hasChanges() {
-        return true;
-    }
+  ngOnInit() {
+  }
+
+  hasChanges() {
+    return false;
+  }
 
 }

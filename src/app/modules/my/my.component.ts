@@ -1,13 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
+import {FadeInAnimation} from '../../router-animations';
 
 @Component({
   selector: 'app-my',
   templateUrl: './my.component.html',
-  styleUrls: ['./my.component.scss']
+  styleUrls: ['./my.component.scss'],
+  animations: [FadeInAnimation]
 })
 export class MyComponent implements OnInit {
 
-  constructor() { }
+  // @HostBinding('@fadeInAnimation') routeAnimation = true;
+  // @HostBinding('style.display') display = 'block';
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

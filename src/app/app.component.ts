@@ -17,8 +17,8 @@ export class AppComponent implements OnInit {
   isShowTabbar = true;
 
   // router跳转动画所需参数
-  routerState = true;
-  routerStateCode = 'active';
+  // routerState = true;
+  // routerStateCode = 'active';
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private titleService: Title) {
     this.angular = `Angular! v${VERSION.full}`;
@@ -43,8 +43,8 @@ export class AppComponent implements OnInit {
           this.isShowTabbar = true;
         }
 
-        this.routerState = !this.routerState;
-        this.routerStateCode = this.routerState ? 'active' : 'inactive';
+        // this.routerState = !this.routerState;
+        // this.routerStateCode = this.routerState ? 'active' : 'inactive';
       });
   }
 }

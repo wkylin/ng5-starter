@@ -1,20 +1,24 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {PostsService} from './posts.service';
-import {ItemAnimations} from './item.animations';
+import {MyAnimation, ListAnimation} from './item.animations';
+import {FadeInAnimation} from '../../router-animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  animations: ItemAnimations
+  animations: [MyAnimation, ListAnimation, FadeInAnimation]
 })
 export class HomeComponent implements OnInit {
 
   posts: any = [];
   state = 'small';
+  number = '';
 
-  values = '';
+  @HostBinding('@fadeInAnimation') routeAnimation = true;
+  @HostBinding('style.display') display = 'block';
+
   constructor(private http: HttpClient, private postsService: PostsService) {
   }
 
