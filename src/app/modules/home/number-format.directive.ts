@@ -8,8 +8,8 @@ export class NumberFormatDirective {
   constructor(public control: NgModel) {
   }
 
-  @HostListener('keyup', ['$event'])
-  onkeyup(event) {
+  @HostListener('input', ['$event'])
+  input(event) {
     const input = event.target;
     const newValue = input.value;
     if (/^\d+\.?\d{0,2}$/.test(input.value)) {

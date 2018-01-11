@@ -57,8 +57,7 @@ export class HomeComponent implements OnInit {
 
   // formatFixed(number) {
   formatFixed(event) {
-    // let numF = number.toString();
-    let numF = event.target.value;
+    let numF = event.value.toString();
     if (numF.indexOf('.') !== -1) {
       numF = numF.substring(0, numF.indexOf('.') + 3);
       const temArray = numF.split('.');
@@ -73,17 +72,18 @@ export class HomeComponent implements OnInit {
     }
     numF = parseFloat(numF).toFixed(3);
     if (numF === 'NaN') {
-      return '0.00';
+      return '';
     }
-    /*if (numF.indexOf('.') === -1) {
+    if (numF.indexOf('.') === -1) {
       numF = numF + '.00';
     } else if (numF.substr(-2, 1) === '.') {
       numF = numF + '0';
-    }*/
-    numF = numF.substring(0, numF.length - 1);
-    numF = numF.replace(/(\d{1,3})(?=(\d{3})+(?:$|\D))/g, '$1,');
+    } else if (numF.substr(-3, 1) === '.') {
+      numF = numF;
+    } else {
+      numF = numF.substring(0, numF.length - 1);
+    }
     // return numF;
-    // console.log(numF);
     this.values = numF;
   }
 }
