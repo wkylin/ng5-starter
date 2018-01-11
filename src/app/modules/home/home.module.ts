@@ -7,14 +7,22 @@ import {HomeRoutingModule} from './home-routing.module';
 // import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryPersonDbService } from '../../services/my-data/my-data';
 import {PostsService} from './posts.service';
+import {SharedModule} from '../shared/shared.module';
+import {FormsModule} from '@angular/forms';
+import {NumberFormatDirective} from './number-format.directive';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
+    SharedModule,
     // InMemoryWebApiModule.forFeature(InMemoryPersonDbService),
     HomeRoutingModule
   ],
-  declarations: [HomeComponent],
+  declarations: [
+    HomeComponent,
+    NumberFormatDirective
+  ],
   providers: [PostsService]
 })
 export class HomeModule {

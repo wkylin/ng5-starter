@@ -14,6 +14,10 @@ export class HomeComponent implements OnInit {
   posts: any = [];
   state = 'small';
 
+  values = '';
+
+  number = '';
+
   constructor(private http: HttpClient, private postsService: PostsService) {
   }
 
@@ -42,8 +46,19 @@ export class HomeComponent implements OnInit {
     this.posts.pop();
   }
 
-  formatFixed(number) {
-    let numF = number.toString();
+  onKey(event: KeyboardEvent) { // with type info
+    // this.values += (<HTMLInputElement>event.target).value + ' | ';
+    if (/^\d+\.?\d{0,2}$/.test((<HTMLInputElement>event.target).value)) {
+      this.values = (<HTMLInputElement>event.target).value;
+    } else {
+      this.values = this.values.substring(0, (<HTMLInputElement>event.target).value.length - 1);
+    }
+  }
+
+  // formatFixed(number) {
+  formatFixed(event) {
+    // let numF = number.toString();
+    let numF = event.target.value;
     if (numF.indexOf('.') !== -1) {
       numF = numF.substring(0, numF.indexOf('.') + 3);
       const temArray = numF.split('.');
@@ -57,9 +72,9 @@ export class HomeComponent implements OnInit {
       numF = temArray[0] + '.' + tem;
     }
     numF = parseFloat(numF).toFixed(3);
-    /*if (numF === 'NaN') {
+    if (numF === 'NaN') {
       return '0.00';
-    }*/
+    }
     /*if (numF.indexOf('.') === -1) {
       numF = numF + '.00';
     } else if (numF.substr(-2, 1) === '.') {
@@ -68,6 +83,7 @@ export class HomeComponent implements OnInit {
     numF = numF.substring(0, numF.length - 1);
     numF = numF.replace(/(\d{1,3})(?=(\d{3})+(?:$|\D))/g, '$1,');
     // return numF;
-    console.log(numF);
+    // console.log(numF);
+    this.values = numF;
   }
 }
