@@ -9,8 +9,8 @@ import {FadeInAnimation} from '../../router-animations';
 })
 export class MyComponent implements OnInit {
 
-  // @HostBinding('@fadeInAnimation') routeAnimation = true;
-  // @HostBinding('style.display') display = 'block';
+  @HostBinding('@fadeInAnimation') routeAnimation = true;
+  @HostBinding('style.display') display = 'block';
 
   constructor() {
   }

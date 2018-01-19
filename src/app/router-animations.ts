@@ -21,7 +21,7 @@ export const RouterAnimation = trigger('routeAnimation', [
 export const FadeInAnimation = trigger('fadeInAnimation', [
   transition(':enter', [
     style({opacity: 0}),
-    animate('1s', style({opacity: 1}))
+    animate('0.5s', style({opacity: 1}))
   ]),
 ]);
 
@@ -32,24 +32,29 @@ export const SlideInOutAnimation = trigger('slideInOutAnimation', [
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.2)'
+    width: '100vw',
+    opacity: 1
   })),
 
   transition(':enter', [
     style({
-      right: '-400%',
-      backgroundColor: 'rgba(0, 0, 0, 0)'
+      left: '200vw',
+      opacity: 0
     }),
-    animate('3s ease-in-out', style({
-      right: 0,
-      backgroundColor: 'rgba(0, 0, 0, 0.2)'
+    animate('2s ease-in-out', style({
+      left: 0,
+      opacity: 1
     }))
   ]),
 
   transition(':leave', [
-    animate('3s ease-in-out', style({
-      right: '-400%',
-      backgroundColor: 'rgba(0, 0, 0, 0)'
+    style({
+      left: 0,
+      opacity: 1
+    }),
+    animate('2s ease-in-out', style({
+      left: '200vw',
+      opacity: 0
     }))
   ])
 ]);

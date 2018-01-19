@@ -3,9 +3,7 @@
     Hello,{{ angular }}
   </div>
   <div class="app-body">
-    <div [@routeAnimation]="routerStateCode">
-      <router-outlet></router-outlet>
-    </div>
+    <router-outlet></router-outlet>
   </div>
   <div class="app-footer" *ngIf="isShowTabbar">
     <div class="tabbar">
