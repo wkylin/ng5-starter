@@ -28,20 +28,20 @@ export const FadeInAnimation = trigger('fadeInAnimation', [
 export const SlideInOutAnimation = trigger('slideInOutAnimation', [
   state('*', style({
     position: 'fixed',
-    top: '50px',
+    top: '44px',
     left: 0,
     right: 0,
     bottom: 0,
-    width: '100vw',
+    width: '100%',
     opacity: 1
   })),
 
   transition(':enter', [
     style({
-      left: '200vw',
+      left: '100%',
       opacity: 0
     }),
-    animate('2s ease-in-out', style({
+    animate('1s ease-in-out', style({
       left: 0,
       opacity: 1
     }))
@@ -52,8 +52,8 @@ export const SlideInOutAnimation = trigger('slideInOutAnimation', [
       left: 0,
       opacity: 1
     }),
-    animate('2s ease-in-out', style({
-      left: '200vw',
+    animate('1s ease-in-out', style({
+      left: '-100%',
       opacity: 0
     }))
   ])
