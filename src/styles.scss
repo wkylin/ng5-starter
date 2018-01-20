@@ -14,23 +14,21 @@ html, body {
 }
 
 .app-layout {
-  width: 100vw;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .app-body {
   height: 100%;
   width: 100%;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  right: 0;
-  bottom: 50px;
+  flex: 1;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .app-header {
-  position: fixed;
-  top: 0;
   display: flex;
   width: 100%;
   min-height: 50px;
@@ -47,11 +45,9 @@ html, body {
 }
 
 .app-footer {
-  position: fixed;
-  bottom: 0;
   width: 100%;
-  min-height: 50px;
-  line-height: 50px;
+  height: 44px;
+  line-height: 44px;
   border-radius: 0;
   border: 0;
   z-index: 10;
@@ -99,9 +95,10 @@ html, body {
 app-root:empty + .loading {
   opacity: 1;
   z-index: 100;
-  h1 {
-    font-family: "courier", monospace;
-    color: #EEE;
-    margin-bottom: 50px;
-  }
+}
+
+app-root:empty + .loading h1 {
+  font-family: "courier", monospace;
+  color: #eee;
+  margin-bottom: 50px;
 }
