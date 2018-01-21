@@ -1,13 +1,13 @@
 const PROXY_CONFIG = [
   {
     context: [
-      "posts",
-      "comments",
-      "profile"
+      'posts',
+      'comments',
+      'profile'
     ],
-    target: "http://localhost:3000",
+    target: 'http://localhost:3000',
     secure: false
   }
 ]
 
-module.exports = PROXY_CONFIG;
+module.exports = PROXY_CONFIG
