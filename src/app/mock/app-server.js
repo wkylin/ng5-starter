@@ -16,69 +16,53 @@ var foods = [
 ]
 
 var books = [
-  {'title': "Hitchhiker's Guide to the Galaxy"},
+  {'title': 'Hitchhiker\'s Guide to the Galaxy'},
   {'title': 'The Fellowship of the Ring'},
   {'title': 'Moby Dick'}
 ]
 
 var movies = [
-  {'title': 'Ghostbusters'},
+  {'title': 'Ghost busters'},
   {'title': 'Star Wars'},
   {'title': 'Batman Begins'}
 ]
 
-var posts = [
-  {
-    'id': 1,
-    'title': 'Hey this is an item',
-    'author': 'wkylin'
-  },
-  {
-    'id': 2,
-    'title': 'Hey this is another item',
-    'author': 'jack'
-  },
-  {
-    'id': 3,
-    'title': 'Hey this is another item',
-    'author': 'jack'
-  },
-  {
-    'id': 4,
-    'title': 'Hey this is another item',
-    'author': 'jack'
-  },
-  {
-    'id': 5,
-    'title': 'Hey this is another item',
-    'author': 'jack'
-  },
-  {
-    'id': 6,
-    'title': 'Hey this is another item',
-    'author': 'jack'
-  },
-  {
-    'id': 7,
-    'title': 'Hey this is another item',
-    'author': 'jack'
-  },
-  {
-    'id': 8,
-    'title': 'Hey this is another item',
-    'author': 'jack'
-  },
-  {
-    'id': 9,
-    'title': 'Hey this is another item',
-    'author': 'jack'
-  },
-  {
-    'id': 10,
-    'title': 'Hey this is another item',
-    'author': 'jack'
-  }
-]
+var posts = {
+  'code': '0000',
+  'message': 'success',
+  'data': [
+    {
+      'id': 1,
+      'title': 'Hey this is an item',
+      'author': 'wkylin'
+    },
+    {
+      'id': 2,
+      'title': 'Hey this is another item',
+      'author': 'jack'
+    },
+    {
+      'id': 3,
+      'title': 'Hey this is another item',
+      'author': 'jack'
+    },
+    {
+      'id': 4,
+      'title': 'Hey this is another item',
+      'author': 'jack'
+    },
+    {
+      'id': 5,
+      'title': 'Hey this is another item',
+      'author': 'jack'
+    },
+    {
+      'id': 6,
+      'title': 'Hey this is another item',
+      'author': 'jack'
+    }
+  ]
+}
 
 // the "index" route, which serves the Angular app
 app.get('/', (req, res) => {

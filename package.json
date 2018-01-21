@@ -9,7 +9,7 @@
     "start": "ng serve --port=4201 --open",
     "start-proxy": "ng serve --host=192.168.2.104 --open --proxy-config proxy.conf.json",
     "start-proxy-multi": "ng serve --open --proxy-config proxy.conf.js",
-    "mock-server-proxy": "concurrently \"yarn run express-data\" \"yarn run start-proxy\"",
+    "mock-server-proxy": "concurrently \"nodemon src/app/mock/app-server.js\" \"yarn run start-proxy\"",
     "mock-server-multi": "concurrently \"yarn run express-data\" \"yarn run start-proxy-multi\"",
     "build-dev": "ng build --dev -sm=true --output-path=dist-dev",
     "build-prod": "ng build --pord -sm=true",

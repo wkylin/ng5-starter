@@ -9,7 +9,9 @@
   <br/>
   {{ number }}
 </div>
-
+<hr>
+<p>Food: {{ food.name }}, {{sequentialFoods.name}}</p>
+<hr>
 <button (click)="pushItem()" [@myAnimation]="state">Add item</button>
 <button (click)="removeItem()">Remove item</button>
 <ul class="ui-list" [@listAnimation]="posts.length">
@@ -17,4 +19,12 @@
     {{ post.title }}
   </li>
 </ul>
+<hr>
+<p>电影：</p>
+<ul class="ui-list">
+  <li class="ui-list-item" *ngFor="let movie of movies">
+    {{ movie.title }}
+  </li>
+</ul>
+
 
