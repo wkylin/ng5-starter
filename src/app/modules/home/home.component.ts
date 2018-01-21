@@ -27,12 +27,12 @@ export class HomeComponent implements OnInit {
   
   ngOnInit() {
     /*this.queryPosts();*/
-    this.queryFoods();
+    // this.queryFoods();
     
-    // this.queryPostsAndFood();
+    this.queryPostsAndFood();
     this.queryMovies();
     
-    // this.queryFoodsSeq();
+    this.queryFoodsSeq();
   }
   
   queryPosts() {
