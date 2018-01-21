@@ -1,9 +1,9 @@
 const PROXY_CONFIG = [
   {
     context: [
-      'posts',
-      'comments',
-      'profile'
+      '/api/posts',
+      '/api/comments',
+      '/api/profile'
     ],
     target: 'http://localhost:3000',
     secure: false
