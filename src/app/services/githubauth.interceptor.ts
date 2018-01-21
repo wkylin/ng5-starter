@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
+import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse } from '@angular/common/http';
 
 import { Observable } from 'rxjs/observable';
 
@@ -10,6 +10,13 @@ export class GithubAuthInterceptor implements HttpInterceptor {
       // https://github.com/settings/tokens
       headers: req.headers.set('Authorization', 'token aa4ab3841083a479cbf05d4e01e762a4a8562abf')
     });
-    return next.handle(authReq);
+    const started = Date.now();
+    return next.handle(authReq)
+      .do(event => {
+      if (event instanceof HttpResponse) {
+        const elapsed = Date.now() - started;
+        console.log(`Request for ${req.urlWithParams} took ${elapsed} ms.`);
+      }
+    });
   }
 }
