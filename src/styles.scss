@@ -106,3 +106,15 @@ app-root:empty + .loading h1 {
   color: #eee;
   margin-bottom: 50px;
 }
+
+a.link {
+  background-color: #347eff;
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}

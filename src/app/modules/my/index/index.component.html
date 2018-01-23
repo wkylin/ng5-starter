@@ -1,14 +1,18 @@
-<p>
-  index works!index works!index works!index works!index works!index works!index works!index works!index works!index
-  works!index works!index works!index works!index works!
-</p>
-
-<div>
-  <a [routerLink]="['/my/setting']">Setting</a>
+<div *ngIf="isLogin">
+  <p>My Bio</p>
+  <hr>
+  <p>Login: {{ userInfo?.login }}</p>
+  <p>Bio: {{ userInfo?.bio }}</p>
+  <p>Company: {{ userInfo?.company }}</p>
 </div>
-
+<hr>
 <div>
-  <a [routerLink]="['/sign/login']">Sign In</a>
+  <a class="link" [routerLink]="['/my/setting']">Setting</a>
+</div>
+<hr>
+<div *ngIf="!isLogin">
+  <!--<a class="link" [routerLink]="['/sign/login']">Sign In</a>-->
+  <span (click)="signIn()">Sign In</span>
 </div>
 
 

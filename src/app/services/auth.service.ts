@@ -1,18 +1,45 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
-
-    constructor() {
+  
+  constructor(public router: Router) {
+  }
+  
+  public login() {
+    const authResult = {
+      expiresIn: 60,
+      accessToken: '522adcf979fd8159216b52ab7cf195245a80d1aa'
     }
-
-    canLoad(): boolean {
-        // Http调用后端的服务检查授权
-        return true;
-    }
-
-    canActivate(): boolean {
-        // Http调用后端的服务检查授权
-        return true;
-    }
+    this.setSession(authResult);
+    this.router.navigate(['/my/index']);
+  }
+  
+  private setSession(authResult): void {
+    const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+    localStorage.setItem('access_token', authResult.accessToken);
+    localStorage.setItem('expires_at', expiresAt);
+  }
+  
+  public logout(): void {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('expires_at');
+    this.router.navigate(['/sign/login']);
+  }
+  
+  public isAuthenticated(): boolean {
+    const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
+    return new Date().getTime() < expiresAt;
+  }
+  
+  canLoad(): boolean {
+    // Http调用后端的服务检查授权
+    return true;
+  }
+  
+  canActivate(): boolean {
+    // Http调用后端的服务检查授权
+    return true;
+  }
 }

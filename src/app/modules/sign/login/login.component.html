@@ -1,11 +1,10 @@
-<p>My Bio</p>
 <hr>
-<p>Login: {{ userInfo?.login }}</p>
-<p>Bio: {{ userInfo?.bio }}</p>
-<p>Company: {{ userInfo?.company }}</p>
 
+<div>
+  <a class="link" [routerLink]="['/sign/login']">Sign In</a>
+</div>
 
 <hr>
 <div>
-  <a [routerLink]="['/sign/register']">Sign Up</a>
+  <a class="link" [routerLink]="['/sign/register']">Sign Up</a>
 </div>
