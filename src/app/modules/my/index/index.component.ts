@@ -35,10 +35,12 @@ export class IndexComponent implements OnInit {
     }
     
   }
-  signIn(){
+  
+  signIn() {
     console.log('sign in');
     this.authService.login();
   }
+  
   getUserResponse() {
     // noinspection JSIgnoredPromiseFromCall
     this.http.get<UserResponse>('https://api.github.com/users/wkylin').subscribe(
