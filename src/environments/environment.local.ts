@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  envName: 'dev',
+  envName: 'local',
   apiBase: '/'
 };

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs/Observable';
 
 // https://github.com/settings/tokens
 // https://scotch.io/@kashyapmukkamala/using-http-interceptor-with-angular2

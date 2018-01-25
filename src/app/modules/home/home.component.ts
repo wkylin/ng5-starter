@@ -11,30 +11,30 @@ import { FadeInAnimation } from '../../router-animations';
   animations: [MyAnimation, ListAnimation, FadeInAnimation]
 })
 export class HomeComponent implements OnInit {
-  
+
   posts: any = [];
   state = 'small';
   number = '';
   food = {};
   sequentialFoods = {};
   movies: any = [];
-  
+
   @HostBinding('@fadeInAnimation') routeAnimation = true;
   @HostBinding('style.display') display = 'block';
-  
+
   constructor(private postsService: PostsService) {
   }
-  
+
   ngOnInit() {
     /*this.queryPosts();*/
     // this.queryFoods();
-    
+
     this.queryPostsAndFood();
     this.queryMovies();
-    
+
     this.queryFoodsSeq();
   }
-  
+
   queryPosts() {
     this.postsService.queryPostsList().subscribe(
       (res) => {
@@ -57,11 +57,11 @@ export class HomeComponent implements OnInit {
       }
     );
   }
-  
+
   queryFoods() {
     this.postsService.queryFoodList().subscribe(
       event => {
-        console.log('event',event);
+        console.log('event', event);
         console.log(event['name']);
         /*if (event['type'] === HttpEventType.DownloadProgress) {
           console.log("Download progress event", event);
@@ -80,7 +80,7 @@ export class HomeComponent implements OnInit {
         console.log('completed');
       });
   }
-  
+
   queryPostsAndFood() {
     this.postsService.parallelRequests().subscribe(
       res => {
@@ -93,10 +93,10 @@ export class HomeComponent implements OnInit {
       },
       () => {
         console.log('completed');
-      })
+      });
   }
-  
-  queryMovies(){
+
+  queryMovies() {
     this.postsService.queryMoviesList().subscribe(
       res => {
         console.log(res);
@@ -107,10 +107,10 @@ export class HomeComponent implements OnInit {
       },
       () => {
         console.log('completed');
-      })
+      });
   }
-  
-  queryFoodsSeq(){
+
+  queryFoodsSeq() {
     this.postsService.sequentialRequests().subscribe(
       res => {
         console.log(res);
@@ -118,19 +118,19 @@ export class HomeComponent implements OnInit {
       },
       err => {
         console.log(err);
-      })
+      });
   }
-  
+
   pushItem() {
     this.posts.push({
       'id': 1,
       'title': 'Hey this is an item',
       'author': 'wkylin'
     });
-    
+
     this.state = (this.state === 'small' ? 'large' : 'small');
   }
-  
+
   removeItem() {
     this.posts.pop();
   }
