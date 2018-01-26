@@ -1,8 +1,12 @@
 <div class="app-layout">
   <div class="app-header">
-    Hello,{{ angular }}, Environment:{{ environmentName | uppercase }}, apiBase: {{ apiBase | uppercase }}
+    Hello,{{ angular }}
   </div>
+  
   <div class="app-body">
+    <div>Environment:{{ environmentName }}</div>
+    <div>apiBase: {{ apiBase }}</div>
+    
     <router-outlet></router-outlet>
   </div>
   <div class="app-footer" *ngIf="isShowTabbar">

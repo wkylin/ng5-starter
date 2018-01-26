@@ -20,13 +20,13 @@ export class PostsService {
 
   // http request
   queryMoviesList() {
-    return this.http.request('get', this.apiBase + 'api/movies');
+    return this.http.request('get', this.apiBase + '/api/movies');
   }
 
   // http get
   queryPostsList() {
     // let httpGet = this.http.get('api/posts', {observe: 'response'}); // 完整的响应信息
-    const getPosts = this.http.get(this.apiBase + 'api/posts', {
+    const getPosts = this.http.get(this.apiBase + '/api/posts', {
       headers: this.headers,
       observe: 'body',
       params: this.getParams,
@@ -52,14 +52,14 @@ export class PostsService {
   // 并行发送多个请求
   parallelRequests() {
     return Observable.forkJoin(
-      this.http.get(this.apiBase + 'api/posts'),
+      this.http.get(this.apiBase + '/api/posts'),
       this.http.post(this.apiBase + '/api/food', {'id': '4', 'name': 'Noodle'})
     );
   }
 
   // 顺序发送 Http 请求
   sequentialRequests() {
-    const swq$ = this.http.get(this.apiBase + 'api/movies').mergeMap(posts => {
+    const swq$ = this.http.get(this.apiBase + '/api/movies').mergeMap(posts => {
       posts[0]['title'] += ' Sequential';
       return this.http.post(this.apiBase + '/api/food', {'name': posts[0]['title']});
     });
