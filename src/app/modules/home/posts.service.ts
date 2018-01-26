@@ -25,6 +25,7 @@ export class PostsService {
 
   // http get
   queryPostsList() {
+    debugger;
     // let httpGet = this.http.get('api/posts', {observe: 'response'}); // 完整的响应信息
     const getPosts = this.http.get(this.apiBase + '/api/posts', {
       headers: this.headers,
