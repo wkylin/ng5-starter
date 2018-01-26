@@ -3,6 +3,8 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse, Htt
 
 import { Observable } from 'rxjs/Observable';
 
+import 'rxjs/add/operator/do';
+
 // https://github.com/settings/tokens
 // https://scotch.io/@kashyapmukkamala/using-http-interceptor-with-angular2
 // https://github.com/mpalourdio/ng-http-loader
