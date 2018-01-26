@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit {
   posts: any = [];
   state = 'small';
   number = '';
-  food = {};
-  sequentialFoods = {};
+  food: any = {};
+  sequentialFoods: any = {};
   movies: any = [];
 
   @HostBinding('@fadeInAnimation') routeAnimation = true;

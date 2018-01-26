@@ -10,7 +10,7 @@
   {{ number }}
 </div>
 <hr>
-<p>Food: {{ food.name }}, {{ sequentialFoods.name }}</p>
+<p>Food: {{ food?.name }}, {{ sequentialFoods?.name }}</p>
 <hr>
 <button (click)="pushItem()" [@myAnimation]="state">Add item</button>
 <button (click)="removeItem()">Remove item</button>

@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
   envName: 'dev',
-  apiBase: ''
+  apiBase: 'http://www.dev.com'
 };
