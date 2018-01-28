@@ -1,5 +1,6 @@
-import {Component, HostBinding, OnInit} from '@angular/core';
-import {SlideInOutAnimation} from '../../../router-animations';
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { SlideInOutAnimation } from '../../../router-animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-setting',
@@ -8,18 +9,23 @@ import {SlideInOutAnimation} from '../../../router-animations';
   animations: [SlideInOutAnimation]
 })
 export class SettingComponent implements OnInit {
-
+  
   @HostBinding('@slideInOutAnimation') routeAnimation = true;
   @HostBinding('style.display') display = 'block';
-
-  constructor() {
-  }
-
+  isCanDeactivate: boolean= false;
+  
+  constructor(private router: Router) {}
+  
   ngOnInit() {
   }
-
+  
   hasChanges() {
-    return false;
+    // 保存操作改变isCanDeactivate
+    return this.isCanDeactivate;
   }
-
+  
+  singOut() {
+    localStorage.clear();
+    this.router.navigate(['/home']);
+  }
 }
