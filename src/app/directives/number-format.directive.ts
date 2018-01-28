@@ -1,4 +1,4 @@
-import { Directive, HostListener } from '@angular/core';
+import { Directive, HostListener, HostBinding, Input, Attribute } from '@angular/core';
 import { NgModel } from '@angular/forms';
 
 @Directive({
