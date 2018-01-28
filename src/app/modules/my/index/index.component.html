@@ -1,18 +1,26 @@
-<div *ngIf="isLogin">
-  <p>My Bio</p>
-  <hr>
-  <p>Login: {{ userInfo?.login }}</p>
-  <p>Bio: {{ userInfo?.bio }}</p>
-  <p>Company: {{ userInfo?.company }}</p>
+<div class="app-content">
+  <div *ngIf="isLogin">
+    <div class="github-bio">
+      <div class="avatar">
+        <img :src="{{userInfo?.avatar_url}}" width="100" alt="">
+      </div>
+      <ul class="text-list">
+        <li>{{userInfo?.login}}</li>
+        <li>{{userInfo?.name}}</li>
+        <li>{{userInfo?.location}}</li>
+        <li>{{userInfo?.blog}}</li>
+        <li>{{userInfo?.html_url}}</li>
+        <li>{{userInfo?.bio}}</li>
+      </ul>
+    </div>
+    <div class="link" [routerLink]="['/my/setting']">Setting</div>
+  </div>
+
+  <div *ngIf="!isLogin">
+    <div class="link" (click)="signIn()">Sign In</div>
+  </div>
 </div>
-<hr>
-<div>
-  <a class="link" [routerLink]="['/my/setting']">Setting</a>
-</div>
-<hr>
-<div *ngIf="!isLogin">
-  <!--<a class="link" [routerLink]="['/sign/login']">Sign In</a>-->
-  <span (click)="signIn()">Sign In</span>
-</div>
+
+
 
 

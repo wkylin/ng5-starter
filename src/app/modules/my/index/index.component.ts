@@ -2,6 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { SlideInOutAnimation } from '../../../router-animations';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
 
 interface UserResponse {
   login: string;
@@ -21,24 +22,20 @@ export class IndexComponent implements OnInit {
   
   userInfo: UserResponse;
   
-  isLogin: boolean;
+  isLogin: boolean = false;
   
-  constructor(private http: HttpClient, private authService: AuthService) {
+  constructor(private router: Router, private http: HttpClient, private authService: AuthService) {
   }
   
   ngOnInit() {
-    
     this.isLogin = this.authService.isAuthenticated();
-    console.log(this.isLogin);
     if (this.isLogin) {
       this.getUserResponse();
     }
-    
   }
   
   signIn() {
-    console.log('sign in');
-    this.authService.login();
+    this.router.navigate(['/sign/login']);
   }
   
   getUserResponse() {
@@ -46,9 +43,7 @@ export class IndexComponent implements OnInit {
     this.http.get<UserResponse>('https://api.github.com/users/wkylin').subscribe(
       (data) => {
         this.userInfo = data;
-        console.log('login: ' + data.login);
-        console.log('bio: ' + data.bio);
-        console.log('company: ' + data.company);
+        console.log(data);
       },
       (err: HttpErrorResponse) => {
         if (err.error instanceof Error) {

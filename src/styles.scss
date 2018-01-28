@@ -32,6 +32,10 @@ router-outlet {
   -webkit-overflow-scrolling: touch;
 }
 
+.app-content {
+  padding: 15px;
+}
+
 .app-header {
   display: flex;
   width: 100%;
@@ -83,7 +87,7 @@ router-outlet {
   color: #488aff;
 }
 
-a.link {
+.link {
   background-color: #347eff;
   width: 80%;
   margin: 0 auto;

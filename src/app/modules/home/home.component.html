@@ -1,16 +1,18 @@
-<div class="title">
-  <div>环境:{{ environmentName }}</div>
-  <div>API地址: {{ apiBase }}</div>
-</div>
+<div class="app-content">
+  <div class="title">
+    <div>环境:{{ environmentName }}</div>
+    <div>API地址: {{ apiBase }}</div>
+  </div>
 
-<div class="title">
-  Welcome to Angular4 Animations!!
-</div>
+  <div class="title">
+    Welcome to Angular4 Animations!!
+  </div>
 
-<button (click)="pushItem()" [@myAnimation]="state">Add item</button>
-<button (click)="removeItem()">Remove item</button>
-<ul class="ui-list" [@listAnimation]="posts.length">
-  <li class="ui-list-item" *ngFor="let post of posts">
-    {{ post.title }}
-  </li>
-</ul>
+  <button (click)="pushItem()" [@myAnimation]="state">Add item</button>
+  <button (click)="removeItem()">Remove item</button>
+  <ul class="ui-list" [@listAnimation]="posts.length">
+    <li class="ui-list-item" *ngFor="let post of posts">
+      {{ post.title }}
+    </li>
+  </ul>
+</div>

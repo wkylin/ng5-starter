@@ -1,6 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { SlideInOutAnimation } from '../../../router-animations';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,8 +15,10 @@ export class LoginComponent implements OnInit {
   @HostBinding('style.display') display = 'block';
   
   
-  constructor(private http: HttpClient) {
+  constructor(private authService: AuthService, private http: HttpClient) {
   }
+  
+  
   
   ngOnInit() {
     this.http.post('https://jsonplaceholder.typicode.com/posts', {title: 'foo', body: 'bar', userId: 1}).subscribe(
@@ -25,5 +28,9 @@ export class LoginComponent implements OnInit {
       (err) => {
         console.log('Error occured: ', err);
       });
+  }
+  
+  login() {
+    this.authService.login();
   }
 }
