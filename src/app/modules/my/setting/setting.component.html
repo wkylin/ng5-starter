@@ -1,7 +1,14 @@
 <div class="app-content">
-   <div class="avatar">
-     <img src="../../../../assets/images/avatar.png" alt="">
-   </div>
+  <div class="app-content">
+    <div class="avatar">
+      <img src="../../../../assets/images/avatar.png" alt="">
+    </div>
+  </div>
+
+  <div class="pipes">
+    PIPES: {{'pipes' | welcome}} {{'pipes' | repeat:3}}
+  </div>
+
+  <div class="link" [routerLink]="['/home']">Home</div>
 </div>
 
-<div class="link" [routerLink]="['/home']">Home</div>
