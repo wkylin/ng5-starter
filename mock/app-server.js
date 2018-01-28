@@ -6,7 +6,7 @@ const app = express()
 app.use(express.static(__dirname))
 
 app.use(bodyParser.json()) // support json encoded bodies
-app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.use(bodyParser.urlencoded({extended: true})) // support encoded bodies
 
 // some data for the API
 var foods = [
@@ -16,18 +16,16 @@ var foods = [
 ]
 
 var books = [
-  {'title': 'Hitchhiker\'s Guide to the Galaxy'},
-  {'title': 'The Fellowship of the Ring'},
-  {'title': 'Moby Dick'}
+  {'title': 'Angular权威教程'},
+  {'title': 'Learning TypeScript中文版'},
+  {'title': '深入理解ES6'}
 ]
 
 var movies = [
-  {'title': 'Ghost busters'},
-  {'title': 'Star Wars'},
-  {'title': 'Batman Begins'}
+  {'title': '无问西东'},
+  {'title': '肖申克的救赎'},
+  {'title': '芳华'}
 ]
-
-
 // the "index" route, which serves the Angular app
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'))
@@ -45,11 +43,11 @@ app.get('/api/movies', (req, res) => {
 })
 
 // the GET "posts" API endpoint
-var posts = require("./posts/posts");
-app.use('/api/posts', posts);
-/*app.get('/api/posts', (req, res) => {
-  res.send(posts)
-})*/
+var posts = require('./posts/posts')
+app.use('/api/posts', posts)
+// app.get('/api/posts', (req, res) => {
+//   res.send(posts)
+// })
 
 // the GET "foods" API endpoint
 app.get('/api/food', (req, res) => {

@@ -1,17 +1,12 @@
-<div>
+<div class="title">
+  <div>环境:{{ environmentName }}</div>
+  <div>API地址: {{ apiBase }}</div>
+</div>
+
+<div class="title">
   Welcome to Angular4 Animations!!
 </div>
-<form novalidate #numberForm="ngForm">
-  <input type='tel' appNumberFormat name="number" placeholder='Input Number' [(ngModel)]='number'>
-</form>
-<div class="ux-form-tips">
-  {{ numberForm.value | json }}
-  <br/>
-  {{ number }}
-</div>
-<hr>
-<p>Food: {{ food?.name }}, {{ sequentialFoods?.name }}</p>
-<hr>
+
 <button (click)="pushItem()" [@myAnimation]="state">Add item</button>
 <button (click)="removeItem()">Remove item</button>
 <ul class="ui-list" [@listAnimation]="posts.length">
@@ -19,12 +14,3 @@
     {{ post.title }}
   </li>
 </ul>
-<hr>
-<p>电影：</p>
-<ul class="ui-list">
-  <li class="ui-list-item" *ngFor="let movie of movies">
-    {{ movie.title }}
-  </li>
-</ul>
-
-

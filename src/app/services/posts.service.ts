@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
-import { environment } from '../../../environments/environment';
-
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class PostsService {
@@ -25,7 +24,6 @@ export class PostsService {
 
   // http get
   queryPostsList() {
-    debugger;
     // let httpGet = this.http.get('api/posts', {observe: 'response'}); // 完整的响应信息
     const getPosts = this.http.get(this.apiBase + '/api/posts', {
       headers: this.headers,
@@ -36,6 +34,7 @@ export class PostsService {
     }); // 只有响应体
     return getPosts;
     // return getPosts.shareReplay(); // 避免重复请求
+    // return getPosts.delay(1000).retry(10);
   }
 
   // http post
@@ -53,8 +52,8 @@ export class PostsService {
   // 并行发送多个请求
   parallelRequests() {
     return Observable.forkJoin(
-      this.http.get(this.apiBase + '/api/posts'),
-      this.http.post(this.apiBase + '/api/food', {'id': '4', 'name': 'Noodle'})
+      this.http.get(this.apiBase + '/api/books'),
+      this.http.get(this.apiBase + '/api/food')
     );
   }
 

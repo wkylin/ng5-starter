@@ -15,6 +15,7 @@ import { AppCustomPreloading } from './common/my-preloading-strategy';
 import { AuthGuard } from './guards/auth.guard';
 import { GithubAuthInterceptor } from './services/githubauth.interceptor';
 import { AuthService } from './services/auth.service';
+import { PostsService } from './services/posts.service';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AuthService } from './services/auth.service';
   providers: [
     AppCustomPreloading,
     AuthService,
+    PostsService,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,

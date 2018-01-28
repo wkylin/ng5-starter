@@ -1,6 +1,7 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpEventType } from '@angular/common/http';
-import { PostsService } from './posts.service';
+import { environment } from '../../../environments/environment';
+import { PostsService } from '../../services/posts.service';
 import { MyAnimation, ListAnimation } from './item.animations';
 import { FadeInAnimation } from '../../router-animations';
 
@@ -11,30 +12,27 @@ import { FadeInAnimation } from '../../router-animations';
   animations: [MyAnimation, ListAnimation, FadeInAnimation]
 })
 export class HomeComponent implements OnInit {
-
-  posts: any = [];
-  state = 'small';
-  number = '';
-  food: any = {};
-  sequentialFoods: any = {};
-  movies: any = [];
-
+  
+  
   @HostBinding('@fadeInAnimation') routeAnimation = true;
   @HostBinding('style.display') display = 'block';
-
+  
+  environmentName: string;
+  apiBase: string;
+  posts: any = [];
+  state: string = 'small';
+  
+  
   constructor(private postsService: PostsService) {
+    this.environmentName = environment.envName;
+    this.apiBase = environment.apiBase;
   }
-
+  
   ngOnInit() {
-    /*this.queryPosts();*/
-    // this.queryFoods();
-
-    this.queryPostsAndFood();
-    this.queryMovies();
-
-    this.queryFoodsSeq();
+    this.queryPosts();
+    
   }
-
+  
   queryPosts() {
     this.postsService.queryPostsList().subscribe(
       (res) => {
@@ -57,80 +55,18 @@ export class HomeComponent implements OnInit {
       }
     );
   }
-
-  queryFoods() {
-    this.postsService.queryFoodList().subscribe(
-      event => {
-        console.log('event', event);
-        console.log(event['name']);
-        /*if (event['type'] === HttpEventType.DownloadProgress) {
-          console.log("Download progress event", event);
-        }
-        if (event['type']=== HttpEventType.UploadProgress) {
-          console.log("Upload progress event", event);
-        }
-        if (event['type'] === HttpEventType.Response) {
-          console.log("response received...", event['body']);
-        }*/
-      },
-      err => {
-        console.log(err);
-      },
-      () => {
-        console.log('completed');
-      });
-  }
-
-  queryPostsAndFood() {
-    this.postsService.parallelRequests().subscribe(
-      res => {
-        console.log(res);
-        this.posts = res[0]['data'];
-        this.food = res[1];
-      },
-      err => {
-        console.log(err);
-      },
-      () => {
-        console.log('completed');
-      });
-  }
-
-  queryMovies() {
-    this.postsService.queryMoviesList().subscribe(
-      res => {
-        console.log(res);
-        this.movies = res;
-      },
-      err => {
-        console.log(err);
-      },
-      () => {
-        console.log('completed');
-      });
-  }
-
-  queryFoodsSeq() {
-    this.postsService.sequentialRequests().subscribe(
-      res => {
-        console.log(res);
-        this.sequentialFoods = res;
-      },
-      err => {
-        console.log(err);
-      });
-  }
-
+  
+  
   pushItem() {
     this.posts.push({
       'id': 1,
       'title': 'Hey this is an item',
       'author': 'wkylin'
     });
-
+    
     this.state = (this.state === 'small' ? 'large' : 'small');
   }
-
+  
   removeItem() {
     this.posts.pop();
   }

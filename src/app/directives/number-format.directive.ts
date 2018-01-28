@@ -1,5 +1,5 @@
-import {Directive, HostListener} from '@angular/core';
-import {NgModel} from '@angular/forms';
+import { Directive, HostListener } from '@angular/core';
+import { NgModel } from '@angular/forms';
 
 @Directive({
   selector: '[appNumberFormat]'
@@ -7,7 +7,7 @@ import {NgModel} from '@angular/forms';
 export class NumberFormatDirective {
   constructor(public control: NgModel) {
   }
-
+  
   @HostListener('input', ['$event'])
   input(event) {
     const input = event.target;

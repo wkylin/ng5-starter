@@ -18,24 +18,23 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent implements OnInit {
   angular: string;
-  environmentName: string;
-  apiBase: string;
+  
   loading = false;
   isShowTabbar = true;
-
+  
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
               private titleService: Title,
-              private eventBusService: EventBusService) {}
-
+              private eventBusService: EventBusService) {
+  }
+  
   ngOnInit() {
     this.angular = `Angular! v${VERSION.full}`;
-    this.environmentName = environment.envName;
-    this.apiBase = environment.apiBase;
+    
     this.eventBusService.showGlobalLoading.subscribe((value: boolean) => {
       this.loading = value;
     });
-
+    
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
         this.eventBusService.showGlobalLoading.next(true);
@@ -46,7 +45,7 @@ export class AppComponent implements OnInit {
         this.eventBusService.showGlobalLoading.next(false);
       }
     });
-
+    
     this.router.events.filter(event => event instanceof NavigationEnd)
       .map(() => this.activatedRoute)
       .map(route => {
