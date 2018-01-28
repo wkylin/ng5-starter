@@ -38,9 +38,10 @@ export class AuthGuard implements CanLoad, CanActivate, CanActivateChild, CanDea
    * @returns {boolean}
    */
   canDeactivate(target: SettingComponent) {
-    if (target.hasChanges()) {
+    /*if (target.hasChanges()) {
       return window.confirm('Do you really want to cancel?');
-    }
-    return true;
+    }*/
+    return this.authService.canDeactivate();
+    // return true;
   }
 }

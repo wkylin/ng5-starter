@@ -37,11 +37,22 @@ export class AuthService {
   
   canLoad(): boolean {
     // Http调用后端的服务检查授权
-    return true;
+    let isLogin = localStorage.getItem('access_token') ? true : false;
+    
+    if (!isLogin) {
+      this.router.navigate(['/sign/login']);
+    }
+    
+    return isLogin;
   }
   
   canActivate(): boolean {
     // Http调用后端的服务检查授权
     return true;
+  }
+  
+  canDeactivate(): boolean {
+    let isSave = window.confirm('Do you really want to cancel?');
+    return isSave;
   }
 }
