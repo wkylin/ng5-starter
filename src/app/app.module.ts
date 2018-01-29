@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { LoadingModule } from 'ngx-loading';
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 
 import { SignModule } from './modules/sign/sign.module';
 import { SharedModule } from './modules/shared/shared.module';
@@ -29,7 +30,8 @@ import { PostsService } from './services/posts.service';
     SignModule,
     SharedModule,
     AppRoutingModule,
-    LoadingModule
+    LoadingModule,
+    LoadingBarRouterModule
   ],
   providers: [
     AppCustomPreloading,

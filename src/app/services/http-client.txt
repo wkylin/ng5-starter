@@ -1,0 +1,5 @@
+1. https://github.com/marcelolimabh/httpClient
+2. https://github.com/joezini/angular-http-client
+3. https://github.com/tiangolo/ngx-http-client
+4. https://github.com/etalay/Angular-5-Making-API-calls-with-the-HttpClient-service
+5. https://github.com/sumanthvemula/Angular4-HttpClient-Wrapper
