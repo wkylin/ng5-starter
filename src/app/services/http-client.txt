@@ -3,3 +3,5 @@
 3. https://github.com/tiangolo/ngx-http-client
 4. https://github.com/etalay/Angular-5-Making-API-calls-with-the-HttpClient-service
 5. https://github.com/sumanthvemula/Angular4-HttpClient-Wrapper
+6. https://scotch.io/@kashyapmukkamala/using-http-interceptor-with-angular2
+7. https://medium.com/@ryanchenkie_40935/angular-authentication-using-the-http-client-and-http-interceptors-2f9d1540eb8

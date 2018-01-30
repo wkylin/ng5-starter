@@ -30,6 +30,8 @@ router-outlet {
   flex: 1;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
+  background: url(assets/images/networking.svg) 0 0 repeat-y transparent;
+  background-size: contain;
 }
 
 .app-content {
@@ -90,13 +92,12 @@ router-outlet {
 .link {
   background-color: #347eff;
   width: 80%;
-  margin: 0 auto;
+  margin: 5px auto;
   display: block;
   height: 44px;
   line-height: 44px;
   text-align: center;
   color: #fff;
-  text-decoration: none;
 }
 
 .title {
