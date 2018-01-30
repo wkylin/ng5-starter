@@ -12,27 +12,29 @@ import { FadeInAnimation } from '../../router-animations';
   animations: [MyAnimation, ListAnimation, FadeInAnimation]
 })
 export class HomeComponent implements OnInit {
-  
-  
+
+
   @HostBinding('@fadeInAnimation') routeAnimation = true;
   @HostBinding('style.display') display = 'block';
-  
+
   environmentName: string;
   apiBase: string;
+  state = 'small';
+
   posts: any = [];
-  state: string = 'small';
-  
-  
+  persons: any;
+
+
   constructor(private postsService: PostsService) {
     this.environmentName = environment.envName;
     this.apiBase = environment.apiBase;
   }
-  
+
   ngOnInit() {
     this.queryPosts();
-    
+    this.queryPersons();
   }
-  
+
   queryPosts() {
     this.postsService.queryPostsList().subscribe(
       (res) => {
@@ -55,19 +57,28 @@ export class HomeComponent implements OnInit {
       }
     );
   }
-  
-  
+
+
   pushItem() {
     this.posts.push({
       'id': 1,
       'title': 'Hey this is an item',
       'author': 'wkylin'
     });
-    
+
     this.state = (this.state === 'small' ? 'large' : 'small');
   }
-  
+
   removeItem() {
     this.posts.pop();
+  }
+
+
+  queryPersons() {
+    this.postsService.queryPersonList().subscribe(
+      res => function () {
+        console.log(res);
+        this.persons = res;
+      });
   }
 }

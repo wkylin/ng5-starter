@@ -17,6 +17,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { GithubAuthInterceptor } from './services/githubauth.interceptor';
 import { AuthService } from './services/auth.service';
 import { PostsService } from './services/posts.service';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryPersonDbService } from './services/my-data/my-data';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { PostsService } from './services/posts.service';
     SharedModule,
     AppRoutingModule,
     LoadingModule,
-    LoadingBarRouterModule
+    LoadingBarRouterModule,
+    InMemoryWebApiModule.forRoot(InMemoryPersonDbService)
   ],
   providers: [
     AppCustomPreloading,

@@ -65,4 +65,9 @@ export class PostsService {
     });
     return swq$;
   }
+
+  // in-memory
+  queryPersonList() {
+    return this.http.request('get', this.apiBase + '/persons');
+  }
 }

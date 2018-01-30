@@ -30,7 +30,7 @@ router-outlet {
   flex: 1;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
-  background: url(assets/images/networking.svg) 0 0 repeat-y transparent;
+  background: url(assets/images/networking.svg) 0 0 repeat transparent;
   background-size: contain;
 }
 
