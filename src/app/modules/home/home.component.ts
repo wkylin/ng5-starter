@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.queryPosts();
-    this.queryPersons();
   }
 
   queryPosts() {

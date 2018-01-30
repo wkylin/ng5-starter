@@ -34,7 +34,7 @@ import { InMemoryPersonDbService } from './services/my-data/my-data';
     AppRoutingModule,
     LoadingModule,
     LoadingBarRouterModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryPersonDbService)
+    // HttpClientInMemoryWebApiModule.forRoot(InMemoryPersonDbService)
   ],
   providers: [
     AppCustomPreloading,
