@@ -4,6 +4,12 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
 import { environment } from '../../environments/environment';
 
+class Person {
+  id: string;
+  name: string;
+  dept: string;
+}
+
 @Injectable()
 export class PostsService {
 
@@ -68,6 +74,6 @@ export class PostsService {
 
   // in-memory
   queryPersonList() {
-    return this.http.request('get', this.apiBase + '/persons');
+    return this.http.request<Person[]>('get', this.apiBase + '/persons').map((r) => r as Person[]);
   }
 }

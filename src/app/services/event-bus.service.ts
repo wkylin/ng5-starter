@@ -8,7 +8,7 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class EventBusService {
   public showGlobalLoading: Subject<boolean> = new Subject<boolean>();
-  
+
   constructor() {
   }
 }
