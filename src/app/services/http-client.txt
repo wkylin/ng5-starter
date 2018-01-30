@@ -5,3 +5,4 @@
 5. https://github.com/sumanthvemula/Angular4-HttpClient-Wrapper
 6. https://scotch.io/@kashyapmukkamala/using-http-interceptor-with-angular2
 7. https://medium.com/@ryanchenkie_40935/angular-authentication-using-the-http-client-and-http-interceptors-2f9d1540eb8
+8. https://offering.solutions/blog/articles/2017/07/19/angular-2-new-http-interface-with-interceptors/
