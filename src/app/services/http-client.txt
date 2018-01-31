@@ -6,3 +6,13 @@
 6. https://scotch.io/@kashyapmukkamala/using-http-interceptor-with-angular2
 7. https://medium.com/@ryanchenkie_40935/angular-authentication-using-the-http-client-and-http-interceptors-2f9d1540eb8
 8. https://offering.solutions/blog/articles/2017/07/19/angular-2-new-http-interface-with-interceptors/
+
+
+
+Animation
+1. https://juejin.im/post/5a6acd78518825734e3e7a84?utm_source=gold_browser_extension
+2. https://github.com/deepthan/blog-angular
+3. https://github.com/fezaoduke/TranslationInstitute/blob/master/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E7%94%A8ngrx%E7%AE%A1%E7%90%86Angular%E7%8A%B6%E6%80%81.md
+4. https://drafts.csswg.org/web-animations/
+5. https://juejin.im/post/5a39c10351882538d3101129
+6. https://juejin.im/post/5a6aa48f6fb9a01c9a26f591?utm_source=gold_browser_extension
