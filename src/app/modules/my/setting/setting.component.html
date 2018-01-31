@@ -4,7 +4,10 @@
       <img src="../../../../assets/images/avatar.png" alt="">
     </div>
   </div>
-
+  <div>
+    Can deactivate:
+    <input #canDeactivate type="checkbox" (change)="checkboxChanged(canDeactivate.checked)"/>
+  </div>
   <div class="pipes">
     PIPES: {{'pipes' | welcome}} {{'pipes' | repeat:3}}
   </div>

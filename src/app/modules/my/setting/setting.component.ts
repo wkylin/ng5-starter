@@ -18,7 +18,10 @@ export class SettingComponent implements OnInit {
   
   ngOnInit() {
   }
-  
+
+  checkboxChanged(checked) {
+    this.isCanDeactivate = checked;
+  }
   hasChanges() {
     // 保存操作改变isCanDeactivate
     return this.isCanDeactivate;
