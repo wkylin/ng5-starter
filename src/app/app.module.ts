@@ -20,8 +20,6 @@ import { PostsService } from './services/posts.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryPersonDbService } from './services/my-data/my-data';
 
-import { ModalDialogModule } from 'ngx-modal-dialog';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +34,6 @@ import { ModalDialogModule } from 'ngx-modal-dialog';
     AppRoutingModule,
     LoadingModule,
     LoadingBarRouterModule,
-    ModalDialogModule.forRoot()
     // HttpClientInMemoryWebApiModule.forRoot(InMemoryPersonDbService)
   ],
   providers: [
