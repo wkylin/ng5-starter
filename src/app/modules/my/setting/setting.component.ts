@@ -9,13 +9,13 @@ import { Router } from '@angular/router';
   animations: [SlideInOutAnimation]
 })
 export class SettingComponent implements OnInit {
-  
+
   @HostBinding('@slideInOutAnimation') routeAnimation = true;
   @HostBinding('style.display') display = 'block';
-  isCanDeactivate: boolean= false;
-  
+  isCanDeactivate = false;
+
   constructor(private router: Router) {}
-  
+
   ngOnInit() {
   }
 
@@ -26,7 +26,7 @@ export class SettingComponent implements OnInit {
     // 保存操作改变isCanDeactivate
     return this.isCanDeactivate;
   }
-  
+
   singOut() {
     localStorage.clear();
     this.router.navigate(['/home']);

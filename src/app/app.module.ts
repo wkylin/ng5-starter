@@ -19,6 +19,12 @@ import { AuthService } from './services/auth.service';
 import { PostsService } from './services/posts.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
+import { ButtonModule } from 'primeng/components/button/button';
+import { InputTextModule } from 'primeng/components/inputtext/inputtext';
+import { ConfirmDialogModule } from 'primeng/components/confirmdialog/confirmdialog';
+import { ConfirmationService } from 'primeng/components/common/api';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,12 +38,16 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
     SharedModule,
     AppRoutingModule,
     LoadingModule,
-    LoadingBarRouterModule
+    LoadingBarRouterModule,
+    ButtonModule,
+    InputTextModule,
+    ConfirmDialogModule
   ],
   providers: [
     AppCustomPreloading,
     AuthService,
     PostsService,
+    ConfirmationService,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
