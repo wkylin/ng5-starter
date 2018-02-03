@@ -13,7 +13,8 @@ import 'rxjs/add/operator/mergeMap';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [RouterAnimation]
+  animations: [RouterAnimation],
+  encapsulation:ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
   angular: string;

@@ -6,4 +6,4 @@
 # IDEs and editors
 .idea/
 #dist/
-node_modules/
+node_module/
