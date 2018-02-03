@@ -173,3 +173,40 @@ router-outlet {
   background-color: #282828;
   height: 100%;
 }
+
+// confirm dialog
+.ui-widget-overlay {
+  background: #666;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.confirm-dialog {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+}
+
+.ui-widget-content {
+  text-align: center;
+}
+
+.ui-dialog.ui-widget .ui-dialog-titlebar {
+  padding: .5rem .5rem;
+  text-align: left;
+}
+
+.ui-dialog.ui-widget .ui-dialog-content {
+  padding: 1rem;
+}
+
+.ui-widget-header .ui-button, .ui-widget-content .ui-button, .ui-widget.ui-button, .ui-button {
+  margin: .5rem;
+}

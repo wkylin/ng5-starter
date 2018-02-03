@@ -24,7 +24,7 @@ import { ButtonModule } from 'primeng/components/button/button';
 import { InputTextModule } from 'primeng/components/inputtext/inputtext';
 import { ConfirmDialogModule } from 'primeng/components/confirmdialog/confirmdialog';
 import { ConfirmationService } from 'primeng/components/common/api';
-
+import { CheckboxModule } from 'primeng/checkbox';
 
 @NgModule({
   declarations: [
@@ -40,9 +40,7 @@ import { ConfirmationService } from 'primeng/components/common/api';
     AppRoutingModule,
     LoadingModule,
     LoadingBarRouterModule,
-    ButtonModule,
-    InputTextModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
   ],
   providers: [
     AppCustomPreloading,

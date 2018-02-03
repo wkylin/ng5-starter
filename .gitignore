@@ -4,6 +4,5 @@
 /tmp
 /out-tsc
 # IDEs and editors
-.idea/
-#dist/
-node_module/
+/node_modules/
+/dist/

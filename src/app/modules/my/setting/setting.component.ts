@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit, ViewEncapsulation } from '@angular/core';
 import { SlideInOutAnimation } from '../../../router-animations';
 import { Router } from '@angular/router';
 
@@ -6,7 +6,8 @@ import { Router } from '@angular/router';
   selector: 'app-setting',
   templateUrl: './setting.component.html',
   styleUrls: ['./setting.component.scss'],
-  animations: [SlideInOutAnimation]
+  animations: [SlideInOutAnimation],
+  encapsulation: ViewEncapsulation.None
 })
 export class SettingComponent implements OnInit {
 
