@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+//@import 'assets/css/primeng-theme.css';
 
 html, body, div, ul, ol, li, p {
   padding: 0;
@@ -91,8 +92,7 @@ router-outlet {
 
 .link {
   background-color: #347eff;
-  width: 80%;
-  margin: 5px auto;
+  margin: 10px auto;
   display: block;
   height: 44px;
   line-height: 44px;

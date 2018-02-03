@@ -6,28 +6,29 @@ import { Router } from '@angular/router';
   selector: 'app-setting',
   templateUrl: './setting.component.html',
   styleUrls: ['./setting.component.scss'],
-  animations: [SlideInOutAnimation],
-  encapsulation: ViewEncapsulation.None
+  animations: [SlideInOutAnimation]
 })
 export class SettingComponent implements OnInit {
-
+  
   @HostBinding('@slideInOutAnimation') routeAnimation = true;
   @HostBinding('style.display') display = 'block';
   isCanDeactivate = false;
-
-  constructor(private router: Router) {}
-
+  
+  constructor(private router: Router) {
+  }
+  
   ngOnInit() {
   }
-
+  
   checkboxChanged(checked) {
     this.isCanDeactivate = checked;
   }
+  
   hasChanges() {
     // 保存操作改变isCanDeactivate
     return this.isCanDeactivate;
   }
-
+  
   singOut() {
     localStorage.clear();
     this.router.navigate(['/home']);
