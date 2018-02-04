@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { SignComponent } from './modules/sign/sign.component';
 import { AppCustomPreloading } from './common/my-preloading-strategy';
 import { AuthGuard } from './guards/auth.guard';
 
