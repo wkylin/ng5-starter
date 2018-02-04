@@ -37,6 +37,12 @@ export class GithubAuthInterceptor implements HttpInterceptor {
           }
         }
       }
-    );
+    ).catch((error, caught) => {
+      //intercept the response error and displace it to the console 
+      console.log("Error Occurred");
+      console.log(error);
+      //return the error to the method that called it
+      return Observable.throw(error);
+    }) as any;
   }
 }

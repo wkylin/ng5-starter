@@ -10,6 +10,9 @@
 10. https://github.com/ova2/frontend-tooling-tutorial/tree/master/angular-playground/router-primeng-confirmdialog
 11. https://forum.primefaces.org/viewtopic.php?p=152034
 
+12. https://dotblogs.com.tw/kinanson/2017/04/10/194053
+13. https://dotblogs.com.tw/kinanson/2017/03/23/082033
+
 
 Animation
 1. https://juejin.im/post/5a6acd78518825734e3e7a84?utm_source=gold_browser_extension
