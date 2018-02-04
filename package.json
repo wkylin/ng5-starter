@@ -16,7 +16,7 @@
     "build-local": "ng build --environment=local -sm=true --output-path=dist-local",
     "build-dev": "ng build --environment=dev -sm=true --output-path=dist-dev",
     "build-prod": "ng build --pord -sm=true --output-path=dist",
-    "build": "ng build -prod --stats-json -aot -ec -sm=true --extract-licenses=false",
+    "build": "ng build --prod --stats-json -aot -ec -sm=true --extract-licenses=false",
     "bundle-report-stats": "webpack-bundle-analyzer dist/stats.json",
     "bundle-report-explorer": "source-map-explorer dist/main.bundle.js",
     "test": "ng test",
