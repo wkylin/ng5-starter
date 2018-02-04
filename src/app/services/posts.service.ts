@@ -4,12 +4,6 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
 import { environment } from '../../environments/environment';
 
-class Person {
-  id: string;
-  name: string;
-  dept: string;
-}
-
 @Injectable()
 export class PostsService {
 
@@ -18,7 +12,6 @@ export class PostsService {
   // headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
   headers = new HttpHeaders({'Content-Type': 'application/json'});
   getParams = new HttpParams().set('a', '1').set('b', '2');
-
 
   constructor(private http: HttpClient) {
   }
@@ -70,10 +63,5 @@ export class PostsService {
       return this.http.post(this.apiBase + '/api/food', {'name': posts[0]['title']});
     });
     return swq$;
-  }
-
-  // in-memory
-  queryPersonList() {
-    return this.http.request<Person[]>('get', this.apiBase + '/persons').map((r) => r as Person[]);
   }
 }

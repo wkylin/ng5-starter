@@ -1,6 +1,8 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit, OnDestroy } from '@angular/core';
 import { PostsService } from '../../services/posts.service';
 import { FadeInAnimation } from '../../router-animations';
+
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-product',
@@ -8,7 +10,7 @@ import { FadeInAnimation } from '../../router-animations';
   styleUrls: ['./product.component.scss'],
   animations: [FadeInAnimation]
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent implements OnInit, OnDestroy {
   
   @HostBinding('@fadeInAnimation') routeAnimation = true;
   @HostBinding('style.display') display = 'block';
@@ -18,6 +20,11 @@ export class ProductComponent implements OnInit {
   foods: any =[];
   books: any =[];
   
+  books$ : Subscription;
+  movies$: Subscription;
+  foods$: Subscription;
+  subscriptions$: Subscription[] = [];
+  
   constructor(private postsService: PostsService) {
   }
   
@@ -26,6 +33,11 @@ export class ProductComponent implements OnInit {
     this.queryBooksAndFood();
     this.queryMovies();
     this.queryFoodsSeq();
+  }
+  ngOnDestroy() {
+    this.subscriptions$.forEach(s => {
+      s.unsubscribe();
+    });
   }
   
   queryFoods() {
@@ -52,7 +64,7 @@ export class ProductComponent implements OnInit {
   }
   
    queryBooksAndFood() {
-     this.postsService.parallelRequests().subscribe(
+     this.books$ = this.postsService.parallelRequests().subscribe(
        res => {
          console.log(res);
          this.books = res[0];
@@ -64,10 +76,11 @@ export class ProductComponent implements OnInit {
        () => {
          console.log('completed');
        });
+     this.subscriptions$.push(this.books$);
    }
   
   queryFoodsSeq() {
-    this.postsService.sequentialRequests().subscribe(
+    this.foods$ = this.postsService.sequentialRequests().subscribe(
       res => {
         console.log(res);
         this.sequentialFoods = res;
@@ -75,10 +88,12 @@ export class ProductComponent implements OnInit {
       err => {
         console.log(err);
       });
+  
+    this.subscriptions$.push(this.foods$);
   }
   
   queryMovies() {
-    this.postsService.queryMoviesList().subscribe(
+    this.movies$ = this.postsService.queryMoviesList().subscribe(
       res => {
         console.log(res);
         this.movies = res;
@@ -89,5 +104,6 @@ export class ProductComponent implements OnInit {
       () => {
         console.log('completed');
       });
+    this.subscriptions$.push(this.movies$);
   }
 }

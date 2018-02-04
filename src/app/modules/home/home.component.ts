@@ -1,9 +1,11 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpEventType } from '@angular/common/http';
+import { Component, HostBinding, OnInit, OnDestroy } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { PostsService } from '../../services/posts.service';
 import { MyAnimation, ListAnimation } from './item.animations';
 import { FadeInAnimation } from '../../router-animations';
+
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-home',
@@ -11,31 +13,32 @@ import { FadeInAnimation } from '../../router-animations';
   styleUrls: ['./home.component.scss'],
   animations: [MyAnimation, ListAnimation, FadeInAnimation]
 })
-export class HomeComponent implements OnInit {
-
-
+export class HomeComponent implements OnInit, OnDestroy {
+  
+  
   @HostBinding('@fadeInAnimation') routeAnimation = true;
   @HostBinding('style.display') display = 'block';
-
-  environmentName: string;
-  apiBase: string;
+  
+  environmentName: string = environment.envName;
+  apiBase: string = environment.apiBase;
   state = 'small';
-
   posts: any = [];
-  persons: any;
-
-
+  
+  posts$: Subscription;
+  
   constructor(private postsService: PostsService) {
-    this.environmentName = environment.envName;
-    this.apiBase = environment.apiBase;
   }
-
+  
   ngOnInit() {
     this.queryPosts();
   }
-
+  
+  ngOnDestroy() {
+    this.posts$.unsubscribe();
+  }
+  
   queryPosts() {
-    this.postsService.queryPostsList().subscribe(
+    this.posts$ = this.postsService.queryPostsList().subscribe(
       (res) => {
         console.log('data:', res);
         // this.posts = res.body['data'];
@@ -56,28 +59,18 @@ export class HomeComponent implements OnInit {
       }
     );
   }
-
-
+  
   pushItem() {
     this.posts.push({
       'id': 1,
       'title': 'Hey this is an item',
       'author': 'wkylin'
     });
-
+    
     this.state = (this.state === 'small' ? 'large' : 'small');
   }
-
+  
   removeItem() {
     this.posts.pop();
-  }
-
-
-  queryPersons() {
-    this.postsService.queryPersonList().subscribe(
-      res => function () {
-        console.log(res);
-        this.persons = res;
-      });
   }
 }
