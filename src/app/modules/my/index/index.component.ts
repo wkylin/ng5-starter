@@ -19,25 +19,25 @@ interface UserResponse {
 export class IndexComponent implements OnInit {
   @HostBinding('@slideInOutAnimation') routeAnimation = true;
   @HostBinding('style.display') display = 'block';
-
+  
   userInfo: UserResponse;
-
+  
   isLogin = false;
-
+  
   constructor(private router: Router, private http: HttpClient, private authService: AuthService) {
   }
-
+  
   ngOnInit() {
     this.isLogin = this.authService.isAuthenticated();
     if (this.isLogin) {
       this.getUserResponse();
     }
   }
-
+  
   signIn() {
     this.router.navigate(['/sign/login']);
   }
-
+  
   getUserResponse() {
     // noinspection JSIgnoredPromiseFromCall
     this.http.get<UserResponse>('https://api.github.com/users/wkylin').subscribe(

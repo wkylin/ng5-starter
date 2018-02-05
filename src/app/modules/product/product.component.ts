@@ -17,10 +17,10 @@ export class ProductComponent implements OnInit, OnDestroy {
   
   sequentialFoods: any = {};
   movies: any = [];
-  foods: any =[];
-  books: any =[];
+  foods: any = [];
+  books: any = [];
   
-  books$ : Subscription;
+  books$: Subscription;
   movies$: Subscription;
   foods$: Subscription;
   subscriptions$: Subscription[] = [];
@@ -34,6 +34,7 @@ export class ProductComponent implements OnInit, OnDestroy {
     this.queryMovies();
     this.queryFoodsSeq();
   }
+  
   ngOnDestroy() {
     this.subscriptions$.forEach(s => {
       s.unsubscribe();
@@ -63,21 +64,21 @@ export class ProductComponent implements OnInit, OnDestroy {
       });
   }
   
-   queryBooksAndFood() {
-     this.books$ = this.postsService.parallelRequests().subscribe(
-       res => {
-         console.log(res);
-         this.books = res[0];
-         this.foods = res[1];
-       },
-       err => {
-         console.log(err);
-       },
-       () => {
-         console.log('completed');
-       });
-     this.subscriptions$.push(this.books$);
-   }
+  queryBooksAndFood() {
+    this.books$ = this.postsService.parallelRequests().subscribe(
+      res => {
+        console.log(res);
+        this.books = res[0];
+        this.foods = res[1];
+      },
+      err => {
+        console.log(err);
+      },
+      () => {
+        console.log('completed');
+      });
+    this.subscriptions$.push(this.books$);
+  }
   
   queryFoodsSeq() {
     this.foods$ = this.postsService.sequentialRequests().subscribe(
@@ -88,7 +89,7 @@ export class ProductComponent implements OnInit, OnDestroy {
       err => {
         console.log(err);
       });
-  
+    
     this.subscriptions$.push(this.foods$);
   }
   
