@@ -6,3 +6,10 @@
 # IDEs and editors
 /node_modules/
 /dist/
+/.idea/
+.idea/jsLibraryMappings.xml
+.idea/modules.xml
+.idea/ng5-starter.iml
+.idea/sonarlint/
+.idea/workspace.xml
+yarn.lock
