@@ -14,29 +14,28 @@ import { Subscription } from 'rxjs/Subscription';
   animations: [MyAnimation, ListAnimation, FadeInAnimation]
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  
-  
+
   @HostBinding('@fadeInAnimation') routeAnimation = true;
   @HostBinding('style.display') display = 'block';
-  
+
   environmentName: string = environment.envName;
   apiBase: string = environment.apiBase;
   state = 'small';
   posts: any = [];
-  
+
   posts$: Subscription;
-  
+
   constructor(private postsService: PostsService) {
   }
-  
+
   ngOnInit() {
     this.queryPosts();
   }
-  
+
   ngOnDestroy() {
     this.posts$.unsubscribe();
   }
-  
+
   queryPosts() {
     this.posts$ = this.postsService.queryPostsList().subscribe(
       (res) => {
@@ -59,17 +58,17 @@ export class HomeComponent implements OnInit, OnDestroy {
       }
     );
   }
-  
+
   pushItem() {
     this.posts.push({
       'id': 1,
       'title': 'Hey this is an item',
       'author': 'wkylin'
     });
-    
+
     this.state = (this.state === 'small' ? 'large' : 'small');
   }
-  
+
   removeItem() {
     this.posts.pop();
   }
