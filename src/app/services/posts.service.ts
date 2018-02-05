@@ -29,7 +29,7 @@ export class PostsService {
       observe: 'body',
       params: this.getParams,
       responseType: 'json',
-      withCredentials: true
+      withCredentials: false
     }); // 只有响应体
     return getPosts;
     // return getPosts.shareReplay(); // 避免重复请求
@@ -52,7 +52,7 @@ export class PostsService {
   parallelRequests() {
     return Observable.forkJoin(
       this.http.get(this.apiBase + '/api/books'),
-      this.http.get(this.apiBase + '/api/food')
+      this.http.get(this.apiBase + '/api/foods')
     );
   }
 

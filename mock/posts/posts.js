@@ -1,4 +1,4 @@
-module.exports = function (req, res) {
+module.exports = function (req, res, next) {
   res.json({
     'code': '0000',
     'message': 'success',

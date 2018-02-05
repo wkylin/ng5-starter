@@ -3,6 +3,13 @@ const bodyParser = require('body-parser')
 const path = require('path')
 
 const app = express()
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, DNT, User-Agent, Keep-Alive");
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+  next();
+});
 app.use(express.static(__dirname))
 
 app.use(bodyParser.json()) // support json encoded bodies
@@ -15,11 +22,11 @@ var foods = [
   {'id': 3, 'name': 'Tacos'}
 ]
 
-var books = [
+/*var books = [
   {'title': 'Angular权威教程'},
   {'title': 'Learning TypeScript中文版'},
   {'title': '深入理解ES6'}
-]
+]*/
 
 var movies = [
   {'title': '无问西东'},
@@ -27,18 +34,20 @@ var movies = [
   {'title': '芳华'}
 ]
 // the "index" route, which serves the Angular app
-app.get('/', (req, res) => {
+app.get('/', (req, res, next) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'))
   // res.send('Hello Express!')
 })
 
 // the GET "books" API endpoint
-app.get('/api/books', (req, res) => {
+var books = require('./posts/books')
+app.use('/api/books', books)
+/*app.get('/api/books', (req, res, next) => {
   res.send(books)
-})
+})*/
 
 // the GET "movies" API endpoint
-app.get('/api/movies', (req, res) => {
+app.get('/api/movies', (req, res, next) => {
   res.send(movies)
 })
 
@@ -50,13 +59,13 @@ app.use('/api/posts', posts)
 // })
 
 // the GET "foods" API endpoint
-app.get('/api/food', (req, res) => {
+app.get('/api/foods', (req, res, next) => {
   console.log('GET foods')
   res.send(foods)
 })
 
 // POST endpoint for creating a new food
-app.post('/api/food', (req, res) => {
+app.post('/api/food', (req, res, next) => {
   // NOTE: This is a sample app to show the Angular Http client functionality.
   // This API endpoint keeps the submitted data in memory. It does not save to a database.
 
@@ -88,7 +97,7 @@ app.post('/api/food', (req, res) => {
 })
 
 // PUT endpoint for editing food
-app.put('/api/food/:id', (req, res) => {
+app.put('/api/food/:id', (req, res, next) => {
   console.log('PUT food: ' + req.params.id)
 
   // read the ID from the query string
