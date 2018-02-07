@@ -1,12 +1,12 @@
-import { Component, VERSION, OnInit, Renderer2, ElementRef, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, VERSION, ViewEncapsulation } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Router, ActivatedRoute, NavigationStart, NavigationError, NavigationCancel, NavigationEnd } from '@angular/router';
-import { RouterAnimation } from './router-animations';
-import { EventBusService } from './services/event-bus.service';
+import { ActivatedRoute, NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
+import { RouterAnimation } from './router-animations';
+import { EventBusService } from './services/event-bus.service';
 
 
 @Component({
