@@ -22,6 +22,7 @@
     "clean-dev": "del-cli dist-dev",
     "clean-local": "del-cli dist-local",
     "clean-dist": "del-cli dist",
+    "ngd": "ngd",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
