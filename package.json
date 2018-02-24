@@ -9,7 +9,7 @@
     "build-local": "ng build --env=local -sm=true --output-path=dist-local",
     "build-dev": "ng build --env=dev -sm=true --output-path=dist-dev",
     "build-prod": "ng build --env=prod -sm=true --output-path=dist --verbose=true --stats-json",
-    "build": "ng build --prod --aot --extract-css -sm=true --build-optimizer --extract-licenses=false ",
+    "build": "ng build --prod --aot --extract-css -sm=true --build-optimizer --extract-licenses=false",
     "start-local": "ng serve --env=local --port=4201 --open",
     "start-dev": "ng serve --env=dev --port=4202 --open",
     "start-prod": "ng serve --env=prod --port=4203 --open",
