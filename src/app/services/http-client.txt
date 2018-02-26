@@ -28,3 +28,19 @@ PWAs
 1. https://www.codementor.io/antonihuguetvives/building-pwas-with-angular-5-gerfaz88x?utm_campaign=NG-Newsletter&utm_medium=email&utm_source=NG-Newsletter_240
 2. https://angular.io/guide/service-worker-getting-started#adding-a-service-worker-to-an-existing-app
 3. https://github.com/MrFrontend/js-magazine
+
+Cygwin
+1. 安装Cygwin https://cygwin.com/
+2. C:\cygwin64\home\UserName
+3. openssl genrsa -out key.pem 1024
+4. openssl req -new -key key.pem -out cert.csr
+5. openssl x509 -req -in cert.csr -signkey key.pem -out cert.pem
+6. http-server -S  -C cert.pem -K key.pem
+
+
+http-server
+1. https://github.com/indexzero/http-server
+2. https://github.com/scottcorgan/pushstate-server
+3. https://github.com/divshot/superstatic
+4. https://github.com/scottcorgan/pushstate-server
+5. http://blog.csdn.net/foruok/article/details/52993948
