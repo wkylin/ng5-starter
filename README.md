@@ -1,4 +1,4 @@
-# Angular Starter----Angular 开胃小菜.
+# Angular Starter
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.1.
 
