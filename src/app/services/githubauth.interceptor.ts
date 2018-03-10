@@ -4,6 +4,7 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse, Htt
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/do';
+import 'rxjs/';
 
 // https://github.com/settings/tokens
 // https://scotch.io/@kashyapmukkamala/using-http-interceptor-with-angular2
@@ -36,6 +37,24 @@ export class GithubAuthInterceptor implements HttpInterceptor {
             console.log('401');
           }
         }
-      });
+      }).map(resp => {
+      if (resp instanceof HttpResponse) {
+        const elapsed = Date.now() - started;
+        console.log(`Request for ${req.urlWithParams} took ${elapsed} ms.`);
+        console.log('Response is ::');
+        console.log(resp.body);
+      }
+      return resp;
+    }).catch(err => {
+      console.log(err);
+      if (err instanceof HttpResponse) {
+        console.log(err.status);
+        console.log(err.body);
+        if (err.status === 401) {
+          console.log('401');
+        }
+      }
+      return Observable.of(err);
+    });
   }
 }
