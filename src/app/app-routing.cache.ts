@@ -6,7 +6,6 @@ export class AppRoutingCache implements RouteReuseStrategy {
   
   // 表示对路由允许复用
   public shouldDetach(route: ActivatedRouteSnapshot): boolean {
-    debugger;
     // 默认对所有路由复用 可通过给路由配置项增加data: { keep: true }来进行选择性使用，代码如下
     if (!route.data.keep) {
       return false;
@@ -26,7 +25,6 @@ export class AppRoutingCache implements RouteReuseStrategy {
   
   // 从缓存中获取快照，若无则返回null
   public retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle {
-    debugger;
     if (!route.routeConfig) {
       return null;
     }
@@ -35,7 +33,6 @@ export class AppRoutingCache implements RouteReuseStrategy {
   
   // 进入路由触发，判断是否同一路由
   public shouldReuseRoute(future: ActivatedRouteSnapshot, current: ActivatedRouteSnapshot): boolean {
-    debugger;
     return future.routeConfig === current.routeConfig;
   }
 }
