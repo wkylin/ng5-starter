@@ -4,6 +4,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
+import { RouteReuseStrategy } from '@angular/router';
+import { AppRoutingCache } from './app-routing.cache';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
@@ -49,6 +52,10 @@ import { ConfirmationService } from 'primeng/components/common/api';
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy
+    },
+    {
+      provide: RouteReuseStrategy,
+      useClass: AppRoutingCache
     }
   ],
   bootstrap: [AppComponent]
