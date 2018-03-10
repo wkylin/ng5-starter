@@ -43,7 +43,7 @@
     "json-schema-to-typescript": "^5.3.3",
     "ngx-loading": "^1.0.14",
     "normalize.css": "^8.0.0",
-    "primeng": "^5.2.1",
+    "primeng": "^5.2.3",
     "rxjs": "^5.5.2",
     "webpack-bundle-analyzer": "^2.11.1",
     "zone.js": "^0.8.20"
