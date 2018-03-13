@@ -1,4 +1,6 @@
 import { Component, HostBinding, OnInit, OnDestroy } from '@angular/core';
+import { Meta, Title } from "@angular/platform-browser";
+
 import { HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { PostsService } from '../../services/posts.service';
@@ -25,7 +27,14 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   posts$: Subscription;
 
-  constructor(private postsService: PostsService) {
+  constructor(private postsService: PostsService, private meta: Meta, private title: Title) {
+    
+    title.setTitle('My Home Page');
+    meta.addTags([
+      {name: 'author', content: 'wkylin'},
+      {name: 'keywords', content: 'angular seo, angular 4 universal, etc'},
+      {name: 'description', content: 'This is my Angular SEO-based App, enjoy it!'}
+    ]);
   }
 
   ngOnInit() {
