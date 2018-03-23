@@ -54,3 +54,9 @@ Angular SEO
 1. https://coursetro.com/posts/code/68/Make-your-Angular-App-SEO-Friendly-(Angular-4-+-Universal)
 
 info There appears to be trouble with your network connection. Retrying...
+
+Angular-cli-ghpages
+1. https://github.com/angular-schule/angular-cli-ghpages
+2. npm i -g angular-cli-ghpages
+3. ng build --prod --base-href "/ng5-starter/"
+4. ngh
