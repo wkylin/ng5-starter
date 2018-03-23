@@ -60,3 +60,12 @@ Angular-cli-ghpages
 2. npm i -g angular-cli-ghpages
 3. ng build --prod --base-href "/ng5-starter/"
 4. ngh
+
+
+WebStorm:
+=================================
+https://www.youtube.com/watch?v=upgjCMHGpwo
+https://github.com/angular/angular-cli/wiki/eject
+1. https://www.sitepoint.com/ultimate-angular-cli-reference/
+2. https://www.sitepoint.com/angular-rxjs-create-api-service-rest-backend/
+3. https://coursetro.com/es/angular-dev/free-course
