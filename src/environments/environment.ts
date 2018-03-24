@@ -6,5 +6,6 @@
 export const environment = {
   production: false,
   envName: 'dev',
-  apiBase: ''
+  apiBase: '',
+  hmr: false
 };
