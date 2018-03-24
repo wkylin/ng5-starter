@@ -9,6 +9,8 @@ import { FadeInAnimation } from '../../router-animations';
 
 import { Subscription } from 'rxjs/Subscription';
 
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -27,7 +29,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   posts$: Subscription;
 
-  constructor(private postsService: PostsService, private meta: Meta, private title: Title) {
+  constructor(private postsService: PostsService, private meta: Meta, private title: Title, private route: ActivatedRoute) {
     
     title.setTitle('My Home Page');
     meta.addTags([
@@ -38,7 +40,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.queryPosts();
+    // this.queryPosts();
+    this.route.data.map((data) => data['posts'])
+      .subscribe((posts) => {this.posts = posts['data'];});
   }
 
   ngOnDestroy() {
