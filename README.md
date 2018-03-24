@@ -29,4 +29,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Demo
 
-[https://stackblitz.com/github/wkylin/ng5-starter](https://stackblitz.com/github/wkylin/ng5-starter)
+1. [https://stackblitz.com/github/wkylin/ng5-starter](https://stackblitz.com/github/wkylin/ng5-starter)
+
+2. [https://github.com/wkylin/ng5-starter](https://github.com/wkylin/ng5-starter)
