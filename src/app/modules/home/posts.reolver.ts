@@ -6,10 +6,10 @@ import { PostsService } from '../../services/posts.service';
 @Injectable()
 export class PostsResolver implements Resolve<any> {
   
-  constructor(private PostsService: PostsService) {
+  constructor(private pService: PostsService) {
   }
   
   public resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
-    return this.PostsService.queryPostsList();
+    return this.pService.queryPostsList();
   }
 }
