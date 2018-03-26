@@ -22,13 +22,15 @@ Animation
 5. https://juejin.im/post/5a39c10351882538d3101129
 6. https://juejin.im/post/5a6aa48f6fb9a01c9a26f591?utm_source=gold_browser_extension
 
-
-
 PWAs
 1. https://www.codementor.io/antonihuguetvives/building-pwas-with-angular-5-gerfaz88x?utm_campaign=NG-Newsletter&utm_medium=email&utm_source=NG-Newsletter_240
 2. https://angular.io/guide/service-worker-getting-started#adding-a-service-worker-to-an-existing-app
 3. https://github.com/MrFrontend/js-magazine
 4. https://scotch.io/amp/tutorials/how-to-build-progressive-web-apps-with-angular
+5. https://medium.com/@nsmirnova/creating-pwa-with-angular-5-e36ea2378b5d
+6. https://medium.com/@nsmirnova/creating-pwa-with-angular-5-part-2-progressifying-the-application-449e3a706129
+7. https://angularfirebase.com/lessons/hnpwa-angular-5-progressive-web-app-service-worker-tutorial/
+8. https://blog.kevinyang.net/2017/11/25/angular-pwa/
 
 Cygwin
 1. 安装Cygwin https://cygwin.com/
