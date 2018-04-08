@@ -31,6 +31,7 @@ PWAs
 6. https://medium.com/@nsmirnova/creating-pwa-with-angular-5-part-2-progressifying-the-application-449e3a706129
 7. https://angularfirebase.com/lessons/hnpwa-angular-5-progressive-web-app-service-worker-tutorial/
 8. https://blog.kevinyang.net/2017/11/25/angular-pwa/
+9. https://medium.com/google-developer-experts/a-new-angular-service-worker-creating-automatic-progressive-web-apps-part-2-practice-3221471269a1
 
 Cygwin
 1. 安装Cygwin https://cygwin.com/
