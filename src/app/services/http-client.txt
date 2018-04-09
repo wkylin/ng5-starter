@@ -83,3 +83,7 @@ Gource
 software version control visualization
 1. https://github.com/acaudwell/Gource
 2. http://gource.io/
+
+Angular Doc
+==============================================
+1. https://angulardoc.org/
