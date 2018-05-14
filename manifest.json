@@ -1,6 +1,6 @@
 {
-  "name": "Progressive Web App",
-  "short_name": "PWA",
+  "name": "My Angular",
+  "short_name": "myNg",
   "description": "progressive web app.",
   "icons": [
     {
