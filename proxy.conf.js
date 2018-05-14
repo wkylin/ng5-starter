@@ -1,7 +1,7 @@
 const PROXY_CONFIG = [
   {
     context: [
-      '/api/posts',
+      '/api/post',
       '/api/comments',
       '/api/profile'
     ],

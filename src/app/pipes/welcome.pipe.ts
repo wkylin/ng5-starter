@@ -5,11 +5,11 @@ import { Pipe, PipeTransform } from '@angular/core';
   pure: false // true
 })
 export class WelcomePipe implements PipeTransform {
-  
+
   /*transform(value: any, args?: any): any {
-    return null;
-  }*/
-  
+   return null;
+   }*/
+
   transform(value: string): string {
     if (!value) {
       return value;
@@ -19,5 +19,4 @@ export class WelcomePipe implements PipeTransform {
     }
     return 'Welcome to ' + value;
   }
-  
 }

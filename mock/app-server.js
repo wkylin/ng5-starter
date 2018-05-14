@@ -65,7 +65,7 @@ app.get('/api/foods', (req, res, next) => {
 })
 
 // POST endpoint for creating a new food
-app.post('/api/food', (req, res, next) => {
+app.post('/api/foods', (req, res, next) => {
   // NOTE: This is a sample app to show the Angular Http client functionality.
   // This API endpoint keeps the submitted data in memory. It does not save to a database.
 
@@ -97,7 +97,7 @@ app.post('/api/food', (req, res, next) => {
 })
 
 // PUT endpoint for editing food
-app.put('/api/food/:id', (req, res, next) => {
+app.put('/api/foods/:id', (req, res, next) => {
   console.log('PUT food: ' + req.params.id)
 
   // read the ID from the query string
@@ -114,7 +114,7 @@ app.put('/api/food/:id', (req, res, next) => {
 })
 
 // DELETE endpoint for deleting food
-app.delete('/api/food/:id', (req, res) => {
+app.delete('/api/foods/:id', (req, res) => {
   console.log('DELETE food: ' + req.params.id)
 
   // read the ID from the query string

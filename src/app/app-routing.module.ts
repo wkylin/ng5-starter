@@ -30,7 +30,7 @@ const routes: Routes = [
     // canLoad: [AuthGuard],
     canActivate: [AuthGuard]
   },
-  
+
   {path: '**', component: NotFoundComponent, data: {title: 'Not Found', isShowTabbar: true}}
 ];
 

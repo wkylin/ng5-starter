@@ -4,6 +4,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
+
 import { RouteReuseStrategy } from '@angular/router';
 import { AppRoutingCache } from './app-routing.cache';
 
@@ -23,13 +24,17 @@ import { PostsService } from './services/posts.service';
 import { ConfirmDialogModule } from 'primeng/components/confirmdialog/confirmdialog';
 import { ConfirmationService } from 'primeng/components/common/api';
 
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent
   ],
   imports: [
-    BrowserModule,
+    // BrowserModule,
+    BrowserModule.withServerTransition({appId: 'my-app'}),
     BrowserAnimationsModule,
     HttpClientModule,
     SharedModule,
@@ -37,6 +42,8 @@ import { ConfirmationService } from 'primeng/components/common/api';
     LoadingModule,
     LoadingBarRouterModule,
     ConfirmDialogModule,
+    ServiceWorkerModule.register('/ng5-starter/ngsw-worker.js', {enabled: environment.production})  // ngh
+    // ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production})  // dev
   ],
   providers: [
     AppCustomPreloading,

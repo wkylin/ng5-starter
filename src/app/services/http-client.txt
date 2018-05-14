@@ -9,7 +9,6 @@
 9. https://stackoverflow.com/questions/46433195/angular-use-modal-dialog-in-candeactivate-guard-service-for-unsubmitted-changes
 10. https://github.com/ova2/frontend-tooling-tutorial/tree/master/angular-playground/router-primeng-confirmdialog
 11. https://forum.primefaces.org/viewtopic.php?p=152034
-
 12. https://dotblogs.com.tw/kinanson/2017/04/10/194053
 13. https://dotblogs.com.tw/kinanson/2017/03/23/082033
 
@@ -32,7 +31,12 @@ PWAs
 7. https://angularfirebase.com/lessons/hnpwa-angular-5-progressive-web-app-service-worker-tutorial/
 8. https://blog.kevinyang.net/2017/11/25/angular-pwa/
 9. https://medium.com/google-developer-experts/a-new-angular-service-worker-creating-automatic-progressive-web-apps-part-2-practice-3221471269a1
-
+10.https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps#add-to-homescreen
+11.https://developers.google.com/web/tools/chrome-devtools/security
+12.https://lavas.baidu.com/
+13.https://coursetro.com/posts/code/64/How-to-Deploy-an-Angular-App-(Angular-4)
+14.https://netbasal.com/sexier-imports-in-typescript-e3c645bdd3c6
+15.https://www.codementor.io/antonihuguetvives/building-pwas-with-angular-5-gerfaz88x
 Cygwin
 1. 安装Cygwin https://cygwin.com/
 2. C:\cygwin64\home\UserName
@@ -40,7 +44,14 @@ Cygwin
 4. openssl req -new -key key.pem -out cert.csr
 5. openssl x509 -req -in cert.csr -signkey key.pem -out cert.pem
 6. http-server -S  -C cert.pem -K key.pem
+7. chrome://flags/#allow-insecure-localhost
+8. npm install angular-cli-ghpages -g
+10. ng build --prod --base-href https://wkylin/github.io/ng-starter
+11. ngh
+12. notes: register('/ng-pwa/ngsw-worker.js')
 
+rm -rf node_modules
+npm-run-all
 
 http-server
 1. https://github.com/indexzero/http-server
@@ -52,6 +63,10 @@ http-server
 
 Angular-cli
 1. http://sithome.oschina.io/2017/02/11/angular-2-bootstrap-process/
+2. https://malcoded.com/posts/angular-fundamentals-universal-server-side-rendering
+3. https://blog.angular-university.io/angular-2-universal-meet-the-internet-of-the-future-seo-friendly-single-page-web-apps/
+4. https://blog.csdn.net/github_33116729/article/details/78294267?locationNum=7&fps=1
+5. https://zhuanlan.zhihu.com/p/29823560
 
 
 Angular SEO
@@ -87,3 +102,14 @@ software version control visualization
 Angular Doc
 ==============================================
 1. https://angulardoc.org/
+
+@ngrx/store
+===============================================
+1. https://medium.com/@bo.vandersteene/advanced-pagination-with-ngrx-store-and-angular-5-f26ca4761cef
+
+
+Angular Universal
+================================================
+1. https://medium.com/@evertonrobertoauler/angular-5-universal-with-transfer-state-using-angular-cli-19fe1e1d352c
+2. http://web.jobbole.com/92884/
+3. https://github.com/angular/angular-cli/wiki/stories-universal-rendering

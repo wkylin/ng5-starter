@@ -12,13 +12,13 @@ import { environment } from '../../environments/environment';
  */
 @Injectable()
 export class HttpService {
-  
+
   apiBase = environment.apiBase;
-  
+
   // 注入httpClient
   constructor(private httpClient: HttpClient) {
   }
-  
+
   /**
    * 文件上传
    * @param {string} url
@@ -45,7 +45,7 @@ export class HttpService {
     // console.log("formData", formData)
     return this.httpClient.post(this.apiBase + url, formData);
   }
-  
+
   /**
    * get请求
    * @param {string} url
@@ -54,7 +54,7 @@ export class HttpService {
   public get(url: string): Observable<Object> {
     return this.httpClient.get(this.apiBase + url);
   }
-  
+
   /**
    * post请求
    * @param {string} url
@@ -64,7 +64,7 @@ export class HttpService {
   public post(url: string, body: any | null): Observable<Object> {
     return this.httpClient.post(this.apiBase + url, body);
   }
-  
+
   /**
    * put请求
    * @param {string} url
@@ -74,7 +74,7 @@ export class HttpService {
   public put(url: string, body: any | null): Observable<Object> {
     return this.httpClient.put(this.apiBase + url, body);
   }
-  
+
   /**
    * delete请求
    * @param {string} url
@@ -83,7 +83,7 @@ export class HttpService {
   public delete(url: string): Observable<Object> {
     return this.httpClient.delete(this.apiBase + url);
   }
-  
+
 }
 
 

@@ -1,5 +1,5 @@
 import { Component, HostBinding, OnInit, OnDestroy } from '@angular/core';
-import { Meta, Title } from "@angular/platform-browser";
+import { Meta, Title } from '@angular/platform-browser';
 
 import { HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
@@ -26,11 +26,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   apiBase: string = environment.apiBase;
   state = 'small';
   posts: any = [];
+  offline = '';
 
   posts$: Subscription;
 
   constructor(private postsService: PostsService, private meta: Meta, private title: Title, private route: ActivatedRoute) {
-    
+
     title.setTitle('My Home Page');
     meta.addTags([
       {name: 'author', content: 'wkylin'},
@@ -41,12 +42,16 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     // this.queryPosts();
-    this.route.data.map((data) => data['posts'])
-      .subscribe((posts) => {this.posts = posts['data'];});
+    // this.route.data.map((data) => data['posts']).subscribe((posts) => {this.posts = posts['data']; }); // code data
+    this.route.data.map((data) => data['posts']).subscribe((posts) => {this.posts = posts; });
+    if (!navigator.onLine) {
+      this.offline = 'Sorry, you\'re offline';
+    }
+
   }
 
   ngOnDestroy() {
-    this.posts$.unsubscribe();
+    // this.posts$.unsubscribe();
   }
 
   queryPosts() {

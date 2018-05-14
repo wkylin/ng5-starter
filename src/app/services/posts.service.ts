@@ -38,7 +38,7 @@ export class PostsService {
 
   // http post
   queryFoodList() {
-    const postFood = this.http.post(this.apiBase + '/api/food', {'id': '4', 'name': 'cake'}, {
+    const postFood = this.http.post(this.apiBase + '/api/foods', {'id': '4', 'name': 'cake'}, {
       headers: this.headers,
       observe: 'body',
       reportProgress: true,
@@ -60,7 +60,7 @@ export class PostsService {
   sequentialRequests() {
     const swq$ = this.http.get(this.apiBase + '/api/movies').mergeMap(posts => {
       posts[0]['title'] += ' Sequential';
-      return this.http.post(this.apiBase + '/api/food', {'name': posts[0]['title']});
+      return this.http.post(this.apiBase + '/api/foods', {'name': posts[0]['title']});
     });
     return swq$;
   }

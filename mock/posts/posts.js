@@ -1,8 +1,6 @@
 module.exports = function (req, res, next) {
-  res.json({
-    'code': '0000',
-    'message': 'success',
-    'data': [
+  res.json(
+    [
       {
         'id': 1,
         'title': 'Hey this is an item',
@@ -34,5 +32,5 @@ module.exports = function (req, res, next) {
         'author': 'jack'
       }
     ]
-  })
+  )
 }

@@ -4,17 +4,17 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-import { hmrBootstrap } from './hmr';
+// import { hmrBootstrap } from './hmr';
 
 
 if (environment.production) {
   enableProdMode();
 }
 
-/*platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.log(err));*/
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.log(err));
 
-const bootstrap = () => {
+/*const bootstrap = () => {
   return platformBrowserDynamic().bootstrapModule(AppModule);
 };
 
@@ -27,4 +27,4 @@ if (environment.hmr) {
   }
 } else {
   bootstrap();
-}
+}*/

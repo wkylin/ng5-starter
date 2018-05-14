@@ -11,36 +11,36 @@ import { Subscription } from 'rxjs/Subscription';
   animations: [FadeInAnimation]
 })
 export class ProductComponent implements OnInit, OnDestroy {
-  
+
   @HostBinding('@fadeInAnimation') routeAnimation = true;
   @HostBinding('style.display') display = 'block';
-  
+
   sequentialFoods: any = {};
   movies: any = [];
   foods: any = [];
   books: any = [];
-  
+
   books$: Subscription;
   movies$: Subscription;
   foods$: Subscription;
   subscriptions$: Subscription[] = [];
-  
+
   constructor(private postsService: PostsService) {
   }
-  
+
   ngOnInit() {
     // this.queryFoods();
     this.queryBooksAndFood();
     this.queryMovies();
     this.queryFoodsSeq();
   }
-  
+
   ngOnDestroy() {
-    this.subscriptions$.forEach(s => {
+    /*this.subscriptions$.forEach(s => {
       s.unsubscribe();
-    });
+    });*/
   }
-  
+
   queryFoods() {
     this.postsService.queryFoodList().subscribe(
       event => {
@@ -63,7 +63,7 @@ export class ProductComponent implements OnInit, OnDestroy {
         console.log('completed');
       });
   }
-  
+
   queryBooksAndFood() {
     this.books$ = this.postsService.parallelRequests().subscribe(
       res => {
@@ -79,7 +79,7 @@ export class ProductComponent implements OnInit, OnDestroy {
       });
     this.subscriptions$.push(this.books$);
   }
-  
+
   queryFoodsSeq() {
     this.foods$ = this.postsService.sequentialRequests().subscribe(
       res => {
@@ -89,10 +89,10 @@ export class ProductComponent implements OnInit, OnDestroy {
       err => {
         console.log(err);
       });
-    
+
     this.subscriptions$.push(this.foods$);
   }
-  
+
   queryMovies() {
     this.movies$ = this.postsService.queryMoviesList().subscribe(
       res => {
