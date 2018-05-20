@@ -29,9 +29,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Demo
 
-1. [https://stackblitz.com/github/wkylin/ng-starter](https://stackblitz.com/github/wkylin/ng-starter)
+1. [https://stackblitz.com/github/wkylin/ng5-starter](https://stackblitz.com/github/wkylin/ng5-starter)
 
-2. [https://github.com/wkylin/ng-starter](https://github.com/wkylin/ng-starter)
+2. [https://github.com/wkylin/ng5-starter](https://github.com/wkylin/ng5-starter)
 
 ## Update angular6.0
 
